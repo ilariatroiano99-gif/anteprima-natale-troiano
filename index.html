@@ -93,10 +93,11 @@ header nav a.on{color:var(--lime);opacity:1}
 .persone button.lime[aria-selected=true]{outline-color:var(--notte)}
 @media (max-width:1024px){
   .apertura{grid-template-columns:1fr}
-  .hero-foto{grid-column:1;grid-row:1;min-height:auto;aspect-ratio:4/5}
+  .apertura{display:block}
+  .hero-foto{position:relative;width:100%;height:118vw;min-height:0;max-height:640px}
   .hero-foto::after{background:linear-gradient(0deg,var(--notte) 0%,rgba(26,26,46,0) 40%)}
-  .apertura .testo{grid-row:2;padding:0 16px 72px;margin-top:-96px}
-  .nella-foto{bottom:auto;right:16px;top:calc(32px + 100vw*1.25 - 200px);padding:8px 14px;font-size:13px}
+  .apertura .testo{position:relative;padding:0 16px 72px;margin-top:-40px}
+  .nella-foto{position:absolute;bottom:auto;right:16px;left:auto;top:min(calc(118vw - 150px),490px);padding:8px 14px;font-size:13px}
   .persone{grid-template-columns:repeat(2,1fr)}
 }
 /* conto alla rovescia */
