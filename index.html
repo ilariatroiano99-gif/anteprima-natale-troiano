@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regali di Natale · Troiano Cicli</title>
+<meta name="description" content="Idee regalo di Natale per chi gioca a padel, va in bici o si allena. Ordina entro il 15 dicembre per riceverlo prima di Natale, oppure ritira in negozio a Santa Maria Capua Vetere.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:Arc;src:url(Archivo-VF.ttf);font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{
+  --notte:#1a1a2e;--notte2:#14142a;--lime:#a3e635;--lime-scuro:#4d7c0f;
+  --neve:#f5f5f0;--neve2:#e9e9e2;--inchiostro:#1a1a2e;--tenue:rgba(255,255,255,.72);
+  --grigio:#5b5b6e;--ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--notte);color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--lime);color:var(--notte)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--lime);outline-offset:4px;border-radius:4px}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--notte)}::-webkit-scrollbar-thumb{background:#3a3a5a;border-radius:8px}
+.disp{font-family:Arc,sans-serif;font-weight:900;font-stretch:62%;text-transform:uppercase;line-height:.86;letter-spacing:-.01em}
+
+/* striscia in alto */
+.striscia{background:var(--lime);color:var(--notte);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;height:32px;overflow:hidden;white-space:nowrap;display:flex;align-items:center}
+.striscia div{display:inline-flex;gap:48px;animation:scorri 40s linear infinite;padding-left:48px}
+.striscia span::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--notte);margin-left:48px;vertical-align:middle}
+@keyframes scorri{to{transform:translateX(-50%)}}
+
+/* testata */
+header{position:absolute;top:32px;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:24px 56px}
+header img{height:40px}
+header nav{display:flex;gap:32px;font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+header nav a{opacity:.86}header nav a:hover{opacity:1}
+header nav a.on{color:var(--lime);opacity:1}
+.carrello{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.carrello svg{width:24px;height:24px}
+.carrello b{display:inline-grid;place-items:center;min-width:24px;height:24px;border-radius:12px;background:var(--lime);color:var(--notte);font-size:12px;transition:transform .4s var(--ease)}
+.carrello b.salta{transform:scale(1.4)}
+
+/* apertura */
+.apertura{position:relative;min-height:100svh;padding:160px 56px 200px;overflow:hidden;background:radial-gradient(120% 80% at 70% 0%,#24244a 0%,var(--notte) 55%,var(--notte2) 100%)}
+#neve{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
+.apertura .testo{position:relative;z-index:6;max-width:640px;padding-top:8vh}
+.apertura h1{font-size:clamp(80px,11vw,176px)}
+.apertura h1 em{font-style:normal;color:var(--lime);display:block}
+.apertura p{font-size:20px;line-height:32px;color:var(--tenue);max-width:30ch;margin-top:32px}
+.apertura p b{color:#fff;font-weight:600}
+.bottoni{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;height:56px;padding:0 32px;border-radius:28px;font-weight:600;font-size:16px;transition:transform .3s var(--ease),background .3s}
+.btn-lime{background:var(--lime);color:var(--notte)}.btn-lime:hover{transform:translateY(-2px)}
+.btn-vuoto{border:1.5px solid rgba(255,255,255,.4)}.btn-vuoto:hover{border-color:#fff}
+.btn svg{width:16px;height:16px}
+
+/* albero fatto di attrezzatura */
+/* cumulo di neve */
+.cumulo{position:absolute;left:0;right:0;bottom:-1px;z-index:7;pointer-events:none}
+.cumulo svg{display:block;width:100%;height:auto}
+
+/* slitta easter egg */
+@keyframes gira{to{transform:rotate(360deg)}}
+
+/* apertura con la foto */
+.apertura{display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0!important;min-height:100svh;background:var(--notte)}
+.apertura .testo{padding:160px 56px 120px;max-width:none}
+.apertura h1{font-size:clamp(72px,8.4vw,152px);line-height:.88}
+.hero-foto{grid-column:2;grid-row:1;position:relative;align-self:stretch;min-height:100svh}
+.hero-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.hero-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--notte) 0%,rgba(26,26,46,0) 28%),linear-gradient(0deg,rgba(26,26,46,.55) 0%,rgba(26,26,46,0) 30%)}
+.apertura .testo{grid-column:1;grid-row:1;z-index:6}
+.nella-foto{position:absolute;right:56px;bottom:96px;z-index:8;display:flex;flex-direction:column;gap:4px;background:rgba(26,26,46,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);padding:12px 20px;border-radius:16px;font-size:15px;font-weight:500;transition:background .3s}
+.nella-foto:hover{background:var(--notte)}
+.nella-foto span{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lime)}
+.nella-foto b{color:var(--lime)}
+/* tessere con foto */
+.persone{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:64px}
+.persone button{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;text-align:left;background:var(--notte);outline:4px solid transparent;outline-offset:4px;transition:outline-color .3s}
+.persone button img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.persone button:hover img{transform:scale(1.05)}
+.persone button::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,26,46,.85) 0%,rgba(26,26,46,0) 50%)}
+.persone .cap{position:absolute;left:24px;right:24px;bottom:24px;z-index:2;color:#fff}
+.persone small{display:block;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin-bottom:8px}
+.persone .disp{font-size:clamp(32px,3.2vw,52px)}
+.persone button.lime{background:var(--lime)}
+.persone button.lime::after{display:none}
+.persone button.lime .cap{color:var(--notte)}.persone button.lime small{color:var(--lime-scuro)}
+.persone button[aria-selected=true]{outline-color:var(--lime)}
+.persone button.lime[aria-selected=true]{outline-color:var(--notte)}
+@media (max-width:1024px){
+  .apertura{grid-template-columns:1fr}
+  .hero-foto{grid-column:1;grid-row:1;min-height:auto;aspect-ratio:4/5}
+  .hero-foto::after{background:linear-gradient(0deg,var(--notte) 0%,rgba(26,26,46,0) 40%)}
+  .apertura .testo{grid-row:2;padding:0 16px 72px;margin-top:-96px}
+  .nella-foto{bottom:auto;right:16px;top:calc(32px + 100vw*1.25 - 200px);padding:8px 14px;font-size:13px}
+  .persone{grid-template-columns:repeat(2,1fr)}
+}
+/* conto alla rovescia */
+.conto{position:relative;background:var(--neve);color:var(--inchiostro);padding:32px 56px 96px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+.conto h2{font-size:clamp(40px,5vw,72px);max-width:12ch}
+.conto h2 span{color:var(--lime-scuro)}
+.conto p b{color:var(--inchiostro)}
+.conto p{font-size:18px;line-height:28px;color:var(--grigio);margin-top:16px;max-width:42ch}
+.numeri{display:flex;gap:24px;align-items:flex-end}
+.numeri div{text-align:center}
+.numeri .disp{font-size:clamp(72px,9vw,144px);font-variant-numeric:tabular-nums;color:var(--inchiostro);line-height:.8}
+.numeri small{display:block;margin-top:12px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grigio)}
+.numeri .sep{font-size:clamp(56px,7vw,112px);color:var(--lime-scuro);padding-bottom:28px}
+
+/* pupazzo easter egg */
+
+/* scelta regali */
+.scegli{background:var(--neve);color:var(--inchiostro);padding:32px 56px 128px}
+.scegli-testa{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:56px}
+.scegli-testa h2{font-size:clamp(56px,7vw,112px)}
+.budget{display:flex;gap:8px;flex-wrap:wrap}
+.budget button{height:44px;padding:0 20px;border-radius:22px;border:1.5px solid #c9c9c0;font-weight:600;font-size:14px;transition:all .3s var(--ease)}
+.budget button:hover{border-color:var(--inchiostro)}
+.budget button[aria-pressed=true]{background:var(--inchiostro);border-color:var(--inchiostro);color:#fff}
+
+.griglia{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 24px}
+.prod{position:relative;display:flex;flex-direction:column;animation:entra .7s var(--ease) both;animation-delay:calc(var(--i)*60ms)}
+@keyframes entra{from{opacity:0;transform:translateY(24px)}}
+.foto{position:relative;aspect-ratio:1/1;background:#fff;border-radius:16px;overflow:visible}
+.foto img{position:absolute;inset:12%;width:76%;height:76%;object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.08) contrast(1.04);transition:transform .6s var(--ease)}
+.prod:hover .foto img{transform:scale(1.05)}
+/* neve sopra le schede */
+.foto::before{content:"";position:absolute;left:-4px;right:-4px;top:-10px;height:22px;z-index:2;pointer-events:none;
+  background:radial-gradient(circle at 8% 100%,#fff 11px,transparent 12px),radial-gradient(circle at 22% 100%,#fff 15px,transparent 16px),radial-gradient(circle at 38% 100%,#fff 10px,transparent 11px),radial-gradient(circle at 55% 100%,#fff 14px,transparent 15px),radial-gradient(circle at 72% 100%,#fff 11px,transparent 12px),radial-gradient(circle at 90% 100%,#fff 15px,transparent 16px);}
+/* nastro regalo al passaggio */
+.nastro{position:absolute;inset:0;border-radius:16px;overflow:hidden;pointer-events:none}
+.nastro::before,.nastro::after{content:"";position:absolute;background:var(--lime);transition:transform .6s var(--ease)}
+.nastro::before{left:calc(50% - 10px);top:0;bottom:0;width:20px;transform:scaleY(0);transform-origin:top}
+.nastro::after{top:calc(50% - 10px);left:0;right:0;height:20px;transform:scaleX(0);transform-origin:left;transition-delay:.12s}
+.prod:hover .nastro::before{transform:scaleY(1)}.prod:hover .nastro::after{transform:scaleX(1)}
+.fiocco{position:absolute;left:50%;top:50%;width:72px;transform:translate(-50%,-50%) scale(0);transition:transform .5s var(--ease) .3s;z-index:3;pointer-events:none}
+.prod:hover .fiocco{transform:translate(-50%,-50%) scale(1)}
+.incarto{position:absolute;left:16px;bottom:16px;z-index:3;background:var(--notte);color:#fff;font-size:12px;font-weight:600;padding:6px 12px;border-radius:12px;opacity:0;transform:translateY(8px);transition:all .4s var(--ease) .35s}
+.prod:hover .incarto{opacity:1;transform:none}
+.prod h3{font-size:16px;line-height:22px;font-weight:500;margin-top:16px;min-height:44px}
+.prod .marca{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grigio);margin-top:16px}
+.prod .marca+h3{margin-top:4px}
+.riga{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.prezzo{font-family:Arc,sans-serif;font-weight:800;font-stretch:75%;font-size:28px}
+.aggiungi{height:40px;padding:0 16px;border-radius:20px;background:var(--inchiostro);color:#fff;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:background .3s,transform .3s var(--ease)}
+.aggiungi:hover{background:var(--lime);color:var(--notte)}
+.aggiungi svg{width:16px;height:16px}
+.aggiungi.fatto{background:var(--lime);color:var(--notte)}
+.vuoto{grid-column:1/-1;padding:48px 0;font-size:18px;color:var(--grigio)}
+
+/* neve sulle schede, ora si vede */
+.foto{background:#fff;box-shadow:0 1px 0 rgba(26,26,46,.06)}
+.foto::before{top:-14px;height:30px;transform:scaleY(1.25);transform-origin:bottom;filter:drop-shadow(0 3px 3px rgba(26,26,46,.22))}
+.in-negozio{position:absolute;right:12px;top:16px;z-index:3;background:var(--lime);color:var(--notte);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:12px}
+/* consiglio del folletto: scheda doppia */
+.consiglio{grid-column:span 2;display:grid;grid-template-columns:5fr 6fr;gap:24px;align-items:end;background:var(--notte);border-radius:24px;padding:24px 24px 24px 0;animation:entra .7s var(--ease) both;animation-delay:calc(var(--i)*60ms)}
+.consiglio .prod{animation:none;color:#fff}
+.consiglio .prod .marca{color:var(--lime)}
+.consiglio .aggiungi{background:var(--lime);color:var(--notte)}
+.elfo{position:relative;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px}
+.elfo img{display:block;width:auto;height:300px;max-width:100%;object-fit:contain;object-position:bottom;margin:0 auto -24px;filter:drop-shadow(0 16px 24px rgba(0,0,0,.4))}
+.fumetto-elfo{position:relative;margin:0 0 16px 24px;background:#fff;color:var(--notte);font-size:15px;line-height:22px;font-weight:500;padding:14px 18px;border-radius:18px 18px 18px 4px}
+.fumetto-elfo::after{content:"";position:absolute;left:32px;bottom:-10px;border:10px solid transparent;border-top-color:#fff;border-bottom:0}
+@media (max-width:1024px){.consiglio{grid-column:span 2}}
+@media (max-width:640px){.persone{gap:12px}.persone .cap{left:14px;right:14px;bottom:14px}.persone small{font-size:10px;letter-spacing:.14em;margin-bottom:4px}.persone .disp{font-size:26px}.consiglio{grid-template-columns:1fr 1fr;gap:12px;padding:16px 16px 16px 0}.elfo{min-height:300px}.elfo img{height:200px}.fumetto-elfo{font-size:13px;line-height:19px;margin-left:12px;padding:10px 12px}}
+/* negozio sotto casa */
+.sottocasa{position:relative;background:var(--notte);padding:128px 56px;display:grid;grid-template-columns:5fr 6fr;gap:80px;align-items:center;overflow:hidden}
+.sottocasa .foto-bn{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden}
+.sottocasa .foto-bn img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1) brightness(.85)}
+.sottocasa .foto-bn .bollo{position:absolute;right:24px;bottom:24px;width:144px;height:144px;border-radius:50%;background:var(--lime);color:var(--notte);display:grid;place-items:center;text-align:center;transform:rotate(-12deg)}
+.bollo .disp{font-size:24px;line-height:.95}
+.sottocasa h2{font-size:clamp(56px,6.4vw,104px)}
+.sottocasa h2 span{color:var(--lime)}
+.sottocasa ul{list-style:none;margin-top:48px;display:grid;gap:0}
+.sottocasa li{display:grid;grid-template-columns:48px 1fr;gap:24px;padding:24px 0;border-top:1px solid rgba(255,255,255,.14)}
+.sottocasa li svg{width:40px;height:40px;color:var(--lime)}
+.sottocasa li b{display:block;font-size:20px;font-weight:600;margin-bottom:4px}
+.sottocasa li span{font-size:16px;line-height:24px;color:var(--tenue)}
+
+/* piede */
+footer{background:var(--notte2);padding:48px 56px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tenue)}
+footer span:last-child{color:var(--lime)}
+
+.avviso{position:fixed;left:50%;bottom:32px;transform:translate(-50%,24px);opacity:0;z-index:50;background:#fff;color:var(--notte);font-weight:600;font-size:15px;padding:16px 24px;border-radius:28px;box-shadow:0 16px 40px rgba(0,0,0,.3);transition:all .5s var(--ease);pointer-events:none;max-width:calc(100vw - 32px)}
+.avviso.on{opacity:1;transform:translate(-50%,0)}
+
+
+/* intro: il pupazzo ti tira le palle di neve (max 5 secondi) */
+.intro{position:fixed;inset:0;z-index:100;pointer-events:auto;overflow:hidden;cursor:pointer}
+.intro .palla{position:absolute;left:0;top:0;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 40%,#dfe3ea 75%,#b9bfcc);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.intro .botto{position:absolute;left:0;top:0;pointer-events:none}
+.intro .coltre{position:absolute;inset:0;background:var(--neve);clip-path:circle(0% at 50% 50%);transition:clip-path .55s cubic-bezier(.7,0,.3,1)}
+.intro .coltre.piena{clip-path:circle(150% at 50% 50%)}
+.intro .scritta{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:var(--notte);opacity:0;transform:scale(.92);transition:all .5s var(--ease);padding:16px}
+.intro .scritta.on{opacity:1;transform:none}
+.intro .scritta .disp{font-size:clamp(64px,12vw,200px)}
+.intro .scritta .disp span{color:var(--lime-scuro)}
+.intro .scritta p{font-size:clamp(16px,1.6vw,22px);font-weight:600;margin-top:24px;letter-spacing:.12em;text-transform:uppercase}
+.intro.esce .strato{transform:translateY(105%);transition:transform .7s cubic-bezier(.7,0,.3,1)}
+.intro .strato{position:absolute;inset:0}
+.intro .salta{position:absolute;right:24px;top:24px;z-index:3;height:40px;padding:0 16px;border-radius:20px;background:rgba(26,26,46,.85);color:#fff;font-size:13px;font-weight:600}
+
+@media (max-width:1024px){
+  header nav{display:none}
+  .apertura{padding-bottom:120px}
+  .griglia{grid-template-columns:repeat(2,1fr)}
+  .conto{grid-template-columns:1fr}
+  .sottocasa{grid-template-columns:1fr;gap:48px}
+}
+@media (max-width:640px){
+  header{padding:16px}
+  .apertura,.conto,.scegli,.sottocasa,footer{padding-left:16px;padding-right:16px}
+  .apertura{padding-top:120px}
+  .apertura p{font-size:18px;line-height:28px}
+  .griglia{gap:32px 16px}
+  .prod h3{font-size:14px;line-height:20px}
+  .prezzo{font-size:22px}
+  .aggiungi span{display:none}.aggiungi{width:40px;padding:0;justify-content:center}
+  .numeri{gap:12px}.numeri .sep{display:none}
+  .conto{padding-bottom:56px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="striscia" aria-label="Ordina entro il 15 dicembre per riceverlo prima di Natale"><div aria-hidden="true">
+<span>Ordina entro il 15 dicembre, arriva prima di Natale</span><span>Pacchetto regalo su richiesta</span><span>Ritiro gratis in Corso Aldo Moro 137</span><span>Spedizione gratis sopra 149 €</span>
+<span>Ordina entro il 15 dicembre, arriva prima di Natale</span><span>Pacchetto regalo su richiesta</span><span>Ritiro gratis in Corso Aldo Moro 137</span><span>Spedizione gratis sopra 149 €</span>
+</div></div>
+
+<header>
+  <a href="#"><img src="logo_scuro.png" alt="Troiano Cicli"></a>
+  <nav aria-label="Menu"><a href="#">Bici</a><a href="#">Padel</a><a href="#">Fitness</a><a href="#">Abbigliamento</a><a href="#">Accessori</a><a href="#" class="on">Regali di Natale</a></nav>
+  <a class="carrello" href="#" aria-label="Carrello"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h9.2a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><b id="nCarrello">0</b></a>
+</header>
+
+<section class="apertura" id="cima">
+  <div class="hero-foto"><img src="foto/gambe_scarpe.jpg" alt="Babbo Natale nella neve con le scarpe da padel Bullpadel Elite"></div>
+  <canvas id="neve" aria-hidden="true"></canvas>
+  <div class="testo">
+    <h1 class="disp">Natale,<em>si gioca duro.</em></h1>
+    <p>A Natale niente regali a caso. <b>Scegli quello giusto</b>, che sia per giocare, pedalare o non stare mai fermi.</p>
+    <div class="bottoni">
+      <a class="btn btn-lime" href="#scegli">Trova il regalo <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8l5 5 5-5"/></svg></a>
+      <a class="btn btn-vuoto" href="#sottocasa">Passa in negozio</a>
+    </div>
+  </div>
+  <a class="nella-foto" href="https://troianocicli.it/pages/prodotto.html?slug=scarpe-bullpadel-elite-26v"><span>Nella foto</span>Scarpe Bullpadel Elite 26V · <b>112 €</b></a>
+</section>
+
+<section class="conto" aria-labelledby="titoloConto">
+
+  <div>
+    <h2 class="disp" id="titoloConto">Il Natale <span>non aspetta.</span></h2>
+    <p>Ordina online entro il <b>15 dicembre</b> e ricevi il regalo prima di Natale. Dopo, il regalo si ritira in negozio.</p>
+  </div>
+  <div class="numeri" aria-live="off">
+    <div><span class="disp" id="gg">00</span><small>Giorni</small></div><span class="disp sep">:</span>
+    <div><span class="disp" id="hh">00</span><small>Ore</small></div><span class="disp sep">:</span>
+    <div><span class="disp" id="mm">00</span><small>Minuti</small></div><span class="disp sep">:</span>
+    <div><span class="disp" id="ss">00</span><small>Secondi</small></div>
+  </div>
+</section>
+
+<section class="scegli" id="scegli" aria-labelledby="titoloScegli">
+  <div class="scegli-testa">
+    <h2 class="disp" id="titoloScegli">Chi vuoi sorprendere?</h2>
+    <div class="budget" role="group" aria-label="Budget">
+      <button aria-pressed="true" data-max="9999">Qualsiasi prezzo</button>
+      <button aria-pressed="false" data-max="30">Fino a 30 €</button>
+      <button aria-pressed="false" data-max="60">Fino a 60 €</button>
+      <button aria-pressed="false" data-max="100">Fino a 100 €</button>
+    </div>
+  </div>
+  <div class="persone" role="tablist" aria-label="Per chi è il regalo">
+    <button role="tab" aria-selected="true" data-g="padel"><img src="foto/babbo_padel.jpg" alt="" style="object-position:50% 20%"><span class="cap"><small>Per chi gioca</small><span class="disp">Padel senza scuse</span></span></button>
+    <button role="tab" aria-selected="false" data-g="bici"><img src="foto/babbo_bici.jpg" alt=""><span class="cap"><small>Per chi pedala</small><span class="disp">Sempre in sella</span></span></button>
+    <button role="tab" aria-selected="false" data-g="allenamento"><img src="foto/mano_verde.jpg" alt=""><span class="cap"><small>Per chi si allena</small><span class="disp">Mai fermi</span></span></button>
+    <button role="tab" aria-selected="false" data-g="piccoli" class="lime"><span class="cap"><small>Pensierini</small><span class="disp">Sotto i 30 €</span></span></button>
+  </div>
+  <div class="griglia" id="griglia" role="tabpanel"></div>
+</section>
+
+<section class="sottocasa" id="sottocasa" aria-labelledby="titoloCasa">
+  <div class="foto-bn">
+    <img src="foto2.jpg" alt="La parete delle racchette nel negozio Troiano Cicli">
+    <div class="bollo"><span class="disp">Dal<br>1922<br>a SMCV</span></div>
+  </div>
+  <div>
+    <h2 class="disp" id="titoloCasa">Il Natale<br><span>passa da qui.</span></h2>
+    <ul>
+      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="6" y="16" width="28" height="18" rx="2"/><path d="M4 10h32v6H4zM20 10v24M20 10c-4-6-12-6-10 0M20 10c4-6 12-6 10 0"/></svg><div><b>Il pacchetto, se vuoi</b><span>Lo prepariamo su richiesta, con un costo aggiuntivo.</span></div></li>
+      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 36s12-10 12-20a12 12 0 0 0-24 0c0 10 12 20 12 20z"/><circle cx="20" cy="16" r="4"/></svg><div><b>Ritira senza pagare</b><span>Il ritiro in negozio, in Corso Aldo Moro 137, è sempre gratuito.</span></div></li>
+      <li><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30V12a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H14l-8 6z"/><path d="M13 16h14M13 21h9"/></svg><div><b>Taglia sbagliata?</b><span>Nessun dramma, puoi cambiarla direttamente in negozio.</span></div></li>
+    </ul>
+    <div class="bottoni"><a class="btn btn-lime" href="#">Come arrivare</a><a class="btn btn-vuoto" href="#">Scrivici su WhatsApp</a></div>
+  </div>
+</section>
+
+<footer><span>/// Move · Ride · Play</span><span>Corso Aldo Moro 137 · SMCV</span></footer>
+<div class="avviso" id="avviso" role="status"></div>
+<div class="intro" id="intro" aria-hidden="true" hidden>
+  <div class="strato" id="strato"><div class="coltre" id="coltre"></div><div class="scritta" id="scritta"><div class="disp">Babbo,<br><span>che partita.</span></div><p>Quest'anno il Natale si gioca</p></div></div>
+  
+  <button class="salta" id="saltaIntro">Salta</button>
+</div>
+
+
+<script>
+const PRODOTTI = {"padel": [{"n": "Racchetta StarVie Tritón 2024", "b": "StarVie", "p": 159.0, "s": "starvie-triton-2024", "i": "img/rc-starvie-triton-2024-1.webp", "neg": true, "elfo": "indica", "tip": "StarVie Tritón a 159 euro. È qui, la provi e spendi circa la metà delle top da 299."}, {"n": "Scarpe Bullpadel Indiga W 26V", "b": "Bullpadel", "p": 60.0, "s": "scarpe-bullpadel-indiga-w-26v", "i": "img/BPS07c1.jpg", "neg": true, "elfo": "pollice", "tip": "Scarpe Bullpadel già in negozio. Le provi prima di regalarle, così vai sul sicuro."}, {"n": "Racchetta Bullpadel Hack 05 2027", "b": "Bullpadel", "p": 299.0, "s": "bullpadel-hack-05-2027", "i": "img/rc-bullpadel-hack-05-2027-1.webp", "neg": true}, {"n": "Racchetta Bullpadel Elite W 02 2027", "b": "Bullpadel", "p": 259.0, "s": "bullpadel-elite-w-02-2027", "i": "img/rc-bullpadel-elite-w-02-2027-1.webp", "neg": true}, {"n": "Scarpe Bullpadel Elite 26V", "b": "Bullpadel", "p": 112.0, "s": "scarpe-bullpadel-elite-26v", "i": "img/BPS08c1.jpg", "neg": true}, {"n": "Borsa Bullpadel Bpp 26024 Wonder", "b": "Bullpadel", "p": 69.0, "s": "borsa-bullpadel-bpp-26024-wonder", "i": "img/ext-immagine22-676x926-b9c635.jpg", "neg": true}, {"n": "SAN PAOLO Borsone Padel Nero e Bianco", "b": "X3 Por Tres", "p": 85.0, "s": "san-paolo-borsone-padel-nero-e-bianco", "i": "img/x3-san-paolo-borsone-padel-nero-e-bianco-1.jpg", "neg": false}, {"n": "BAHIA Borsone Bianco/Fucsia", "b": "X3 Por Tres", "p": 70.0, "s": "bahia-borsone-bianco-fucsia", "i": "img/x3-bahia-borsone-bianco-fucsia-1.jpg", "neg": false}, {"n": "Scarpe Bullpadel Icon 26V", "b": "Bullpadel", "p": 100.0, "s": "scarpe-bullpadel-icon-26v", "i": "img/BPS09c1.jpg", "neg": true}, {"n": "Scarpe Bullpadel Perf Comfort W 26V", "b": "Bullpadel", "p": 76.0, "s": "scarpe-bullpadel-perf-comfort-w-26v", "i": "img/BPS06c1.jpg", "neg": true}], "bici": [{"n": "Bici Spiderman 16 N03", "b": null, "p": 160.0, "s": "bici-spiderman-16-n03", "i": "img/bici-spiderman-16-n03.jpg", "neg": true, "elfo": "indica", "tip": "Bici da 14 e 16 pollici da 150 euro. Sono qui, pronte per finire sotto l'albero."}, {"n": "Bici Maui Uomo", "b": "MBM", "p": 469.0, "s": "maui-uomo", "i": "img/ext-maui-green-570x445-1-3f3f50.jpg", "neg": true}, {"n": "Bici Wish 16 N01", "b": null, "p": 160.0, "s": "bici-wish-16-n01", "i": "img/bici-wish-16-n01.jpg", "neg": true}, {"n": "Bici BMX 14 N03", "b": null, "p": 150.0, "s": "bici-bmx-14-n03", "i": "img/44206.jpg", "neg": true}, {"n": "Casco BRN Veloce Vintage Bianco", "b": "BRN", "p": 68.0, "s": "casco-brn-veloce-vintage-bianco", "i": "img/cas41b.jpg", "neg": false}, {"n": "Fanale Knog Cobber Reflex Anteriore", "b": "Knog", "p": 69.9, "s": "fanale-knog-cobber-reflex-anteriore", "i": "img/kn94a.jpg", "neg": false}, {"n": "Antifurto Knog Scout Compatibile Apple", "b": "Knog", "p": 59.9, "s": "antifurto-knog-scout-compatibile-apple", "i": "img/kn100.jpg", "neg": false}, {"n": "Borsetta Brooks Challenge Large Honey", "b": "Brooks", "p": 115.0, "s": "borsetta-brooks-challenge-large-honey", "i": "img/br98h.jpg", "neg": false}, {"n": "Occhiali Altalist Kaku SP2 Fotocromatici VIV20 Oro/Giallo Sabbia", "b": "Altalist", "p": 79.0, "s": "occhiali-altalist-kaku-sp2-fotocromatici-viv20-orogiallo-sabbia", "i": "img/al0805.jpg", "neg": false}, {"n": "Bici Princess 14 N01", "b": null, "p": 150.0, "s": "bici-princess-14-n01", "i": "img/bici-princess-14-n01.jpg", "neg": true}, {"n": "Bici Candy 16", "b": "MBM", "p": 189.0, "s": "candy-16", "i": "img/ext-candy-16-570x445-rosa-19dffc.jpg", "neg": true}], "allenamento": [{"n": "ONTARIO Nero Felpa crop donna con cappuccio", "b": "X3 Por Tres", "p": 53.0, "s": "ontario-nero-felpa-crop-donna-con-cappuccio", "i": "img/x3-ontario-nero-felpa-crop-donna-con-cappuccio-1.jpg", "neg": true, "elfo": "pollice", "tip": "Felpe X3 Por Tres da 50 a 53 euro, in più taglie. Se sbagli, cambi in negozio."}, {"n": "MONTREAL Nera Felpa Donna con cappuccio e tasca", "b": "X3 Por Tres", "p": 53.0, "s": "montreal-nera-felpa-donna-con-cappuccio-e-tasca", "i": "img/x3-montreal-nera-felpa-donna-con-cappuccio-e-tasca-1.jpg", "neg": true}, {"n": "MALI Nero- Felpa in caldo cotone", "b": "X3 Por Tres", "p": 50.0, "s": "mali-nero-felpa-in-caldo-cotone", "i": "img/x3-mali-nero-felpa-in-caldo-cotone-1.jpg", "neg": true}, {"n": "FLORIDA Nero- Pantalone in cotone caldo", "b": "X3 Por Tres", "p": 47.5, "s": "florida-nero-pantalone-in-cotone-caldo", "i": "img/x3-florida-nero-pantalone-in-cotone-caldo-1.jpg", "neg": true}, {"n": "BOLIVIA Verde Militare- giubbotto invernale con pile interno", "b": "X3 Por Tres", "p": 85.0, "s": "bolivia-verde-militare-giubbotto-invernale-con-pile-interno", "i": "img/x3-bolivia-verde-militare-giubbotto-invernale-con-pile-interno-1.jpg", "neg": false}, {"n": "NEVADA Sabbia - Felpa full zip in cotone caldo", "b": "X3 Por Tres", "p": 57.0, "s": "nevada-sabbia-felpa-full-zip-in-cotone-caldo", "i": "img/x3-nevada-sabbia-felpa-full-zip-in-cotone-caldo-1.jpg", "neg": false}, {"n": "KANSAS Off White- Felpa in cotone caldo con marsupio", "b": "X3 Por Tres", "p": 55.0, "s": "kansas-off-white-felpa-in-cotone-caldo-con-marsupio", "i": "img/x3-kansas-off-white-felpa-in-cotone-caldo-con-marsupio-1.jpg", "neg": false}, {"n": "PARANà - Zaino Backpack Nero e Bianco", "b": "X3 Por Tres", "p": 60.0, "s": "parana-zaino-backpack-nero-e-bianco", "i": "img/x3-parana-zaino-backpack-nero-e-bianco-1.jpg", "neg": false}, {"n": "UNGHERIA Verde Vestito", "b": "X3 Por Tres", "p": 65.0, "s": "ungheria-verde-vestito", "i": "img/x3-ungheria-verde-vestito-1.jpg", "neg": true}, {"n": "OTTAWA Nero - Pantalone donna felpa", "b": "X3 Por Tres", "p": 45.0, "s": "ottawa-nero-pantalone-donna-felpa", "i": "img/x3-ottawa-nero-pantalone-donna-felpa-1.jpg", "neg": true}, {"n": "ALBERTA Grigio - Pantalone felpa donna X3 Por Tres – modello a zampa", "b": "X3 Por Tres", "p": 47.0, "s": "alberta-grigio-pantalone-felpa-donna-x3-por-tres-modello-a-zampa", "i": "img/x3-alberta-grigio-pantalone-felpa-donna-x3-por-tres-modello-a-zampa-1.jpg", "neg": true}], "piccoli": [{"n": "Maglia tecnica Troiano Cicli Donna", "b": "F.Troiano", "p": 12.5, "s": "maglia-tecnica-troiano-cicli-donna", "i": "img/maglia-troiano-donna-nero-1-davanti.jpg", "neg": true}, {"n": "CALZE - CAPSULE LAZIO", "b": "X3 Por Tres", "p": 8.5, "s": "calze-capsule-lazio", "i": "img/x3-calze-capsule-lazio-1.jpg", "neg": true}, {"n": "MADRID Fascia Bianca", "b": "X3 Por Tres", "p": 12.0, "s": "madrid-fascia-bianca", "i": "img/x3-madrid-fascia-bianca-1.jpg", "neg": false}, {"n": "Calze ESSENTIAL Lunghe Bianche con Logo Fucsia 100% Cotone", "b": "X3 Por Tres", "p": 7.0, "s": "calze-essential-lunghe-bianche-con-logo-fucsia-100-cotone", "i": "img/x3-calze-essential-lunghe-bianche-con-logo-fucsia-100-cotone-1.jpg", "neg": true}, {"n": "Caschetto Bici Princess", "b": null, "p": 29.0, "s": "caschetto-bici-princess-1", "i": "img/35246.jpg", "neg": true}, {"n": "Campanello Knog Oi Prima Small Primer Grey", "b": "Knog", "p": 29.9, "s": "campanello-knog-oi-prima-small-primer-grey", "i": "img/kn89s.jpg", "neg": false}, {"n": "Campanello BRN Anita Dorato 40 MM", "b": "BRN", "p": 18.0, "s": "campanello-brn-anita-dorato-40-mm", "i": "img/cam50o.jpg", "neg": false}, {"n": "Calze ESSENTIAL Lunghe Nere con Logo Giallo 100% Cotone", "b": "X3 Por Tres", "p": 7.0, "s": "calze-essential-lunghe-nere-con-logo-giallo-100-cotone", "i": "img/x3-calze-essential-lunghe-nere-con-logo-giallo-100-cotone-1.jpg", "neg": true}]};
+const eur = n => n.toLocaleString('it-IT',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2})+' €';
+const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- neve ---------- */
+(() => {
+  const c = document.getElementById('neve'), x = c.getContext('2d');
+  let W, H, fiocchi = [], dpr = Math.min(devicePixelRatio || 1, 2), mx = 0;
+  function dim(){ W = c.clientWidth; H = c.clientHeight; c.width = W*dpr; c.height = H*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+    const n = Math.round(W*H/9000); fiocchi = Array.from({length:n}, () => nuovo(true)); }
+  function nuovo(ovunque){ const z = Math.random(); return { x: Math.random()*W, y: ovunque ? Math.random()*H : -10, r: .8 + z*2.6, v: .3 + z*1.1, o: .25 + z*.6, f: Math.random()*6.28, lime: Math.random() < .04 }; }
+  addEventListener('resize', dim); dim();
+  addEventListener('pointermove', e => { mx = (e.clientX / innerWidth - .5) * .8; });
+  function giro(){
+    x.clearRect(0,0,W,H);
+    for (const p of fiocchi){
+      p.f += .01; p.y += p.v; p.x += Math.sin(p.f)*.4 + mx*p.v;
+      if (p.y > H + 10){ Object.assign(p, nuovo(false)); }
+      if (p.x > W + 10) p.x = -10; if (p.x < -10) p.x = W + 10;
+      x.beginPath(); x.arc(p.x, p.y, p.r, 0, 6.283);
+      x.fillStyle = p.lime ? `rgba(163,230,53,${p.o})` : `rgba(255,255,255,${p.o})`; x.fill();
+    }
+    requestAnimationFrame(giro);
+  }
+  if (!ridotto) giro(); else { for (const p of fiocchi){ x.beginPath(); x.arc(p.x,p.y,p.r,0,6.283); x.fillStyle=`rgba(255,255,255,${p.o})`; x.fill(); } }
+})();
+
+/* ---------- conto alla rovescia al 15 dicembre ---------- */
+(() => {
+  const fine = new Date('2026-12-15T23:59:59+01:00').getTime();
+  const z = n => String(n).padStart(2,'0');
+  function t(){
+    let d = Math.max(0, fine - Date.now()) / 1000;
+    gg.textContent = z(Math.floor(d/86400)); hh.textContent = z(Math.floor(d%86400/3600));
+    mm.textContent = z(Math.floor(d%3600/60)); ss.textContent = z(Math.floor(d%60));
+  }
+  t(); setInterval(t, 1000);
+})();
+
+/* ---------- scelta regali ---------- */
+(() => {
+  let gruppo = 'padel', max = 9999, nCarr = 0;
+  const g = document.getElementById('griglia');
+  const fiocco = '<svg class="fiocco" viewBox="0 0 72 48"><path d="M36 24C24 4 4 6 10 22s26 2 26 2zM36 24c12-20 32-18 26-2s-26 2-26 2z" fill="#a3e635" stroke="#4d7c0f" stroke-width="2"/><path d="M36 24l-10 22M36 24l10 22" stroke="#a3e635" stroke-width="6" stroke-linecap="round"/><circle cx="36" cy="24" r="6" fill="#4d7c0f"/></svg>';
+  function disegna(){
+    const lista = PRODOTTI[gruppo].filter(p => p.p <= max).sort((a,b) => (!!b.tip - !!a.tip) || (b.neg - a.neg));
+    g.innerHTML = lista.length ? lista.map((p,i) => {
+      const scheda = `
+      <article class="prod" style="--i:${i}">
+        <a class="foto" href="https://troianocicli.it/pages/prodotto.html?slug=${p.s}"><img src="${p.i}" alt="${p.n}"><span class="nastro"></span>${fiocco}<span class="incarto">Pacchetto su richiesta</span>${p.neg ? '<span class="in-negozio">In negozio</span>' : ''}</a>
+        <div class="marca">${p.b}</div>
+        <h3><a href="https://troianocicli.it/pages/prodotto.html?slug=${p.s}">${p.n}</a></h3>
+        <div class="riga"><span class="prezzo">${eur(p.p)}</span><button class="aggiungi" data-n="${p.n}"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg><span>Aggiungi</span></button></div>
+      </article>`;
+      return p.tip ? `<div class="consiglio ${p.elfo}" style="--i:${i}"><div class="elfo"><p class="fumetto-elfo">${p.tip}</p><img src="foto/folletto_${p.elfo}.png" alt="Il folletto di Troiano"></div>${scheda}</div>` : scheda;
+    }).join('')
+      : `<p class="vuoto">In questa fascia di prezzo non abbiamo regali per questo gruppo. Prova un altro budget, o passa in negozio: qualcosa troviamo.</p>`;
+  }
+  document.querySelectorAll('.persone button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.persone button').forEach(x => x.setAttribute('aria-selected', x === b));
+    gruppo = b.dataset.g; disegna();
+    document.getElementById('griglia').scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+  document.querySelectorAll('.budget button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.budget button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    max = +b.dataset.max; disegna();
+  }));
+  g.addEventListener('click', e => {
+    const b = e.target.closest('.aggiungi'); if (!b) return;
+    b.classList.add('fatto'); b.querySelector('span').textContent = 'Nel carrello';
+    const n = document.getElementById('nCarrello'); n.textContent = ++nCarr;
+    n.classList.add('salta'); setTimeout(() => n.classList.remove('salta'), 400);
+    avviso(b.dataset.n + ' è nel carrello.');
+  });
+  disegna();
+})();
+
+
+/* ---------- intro: palle di neve, poi la scritta, tutto entro 5 secondi ---------- */
+(() => {
+  let visto = false; try { visto = sessionStorage.getItem('introNeve') === '1'; } catch(e){}
+  if (ridotto || visto || location.hash === '#noIntro') return;
+  try { sessionStorage.setItem('introNeve','1'); } catch(e){}
+  const I = document.getElementById('intro'), S = document.getElementById('strato');
+  const C = document.getElementById('coltre'), T = document.getElementById('scritta');
+  I.hidden = false; document.documentElement.style.overflow = 'hidden';
+  const timers = []; const dopo = (ms, f) => timers.push(setTimeout(f, ms));
+  function botto(x, y, r){
+    const n = 11, pts = [];
+    for (let i = 0; i < n; i++){ const a = i/n*6.283, k = r*(.7 + Math.random()*.5); pts.push([x + Math.cos(a)*k, y + Math.sin(a)*k]); }
+    const mid = (p,q) => [(p[0]+q[0])/2, (p[1]+q[1])/2];
+    const s0 = mid(pts[n-1], pts[0]);
+    const d = `M${s0[0]},${s0[1]} ` + pts.map((p,i) => { const m = mid(p, pts[(i+1)%n]); return `Q${p[0]},${p[1]} ${m[0]},${m[1]}`; }).join(' ') + 'Z';
+    const s = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    s.setAttribute('class','botto'); s.setAttribute('width',innerWidth); s.setAttribute('height',innerHeight);
+    let gocce = ''; for (let i = 0; i < 7; i++){ const a = Math.random()*6.283, k = r*(1.15 + Math.random()*.5); gocce += `<circle cx="${x+Math.cos(a)*k}" cy="${y+Math.sin(a)*k}" r="${4+Math.random()*r*.08}" fill="#f5f5f0"/>`; }
+    s.innerHTML = `<path d="${d}" fill="#f5f5f0"/><path d="${d}" fill="none" stroke="#dfe3ea" stroke-width="3"/>${gocce}`;
+    S.insertBefore(s, C);
+    s.animate([{transform:'scale(.2)',transformOrigin:`${x}px ${y}px`},{transform:'scale(1)',transformOrigin:`${x}px ${y}px`}],{duration:220,easing:'cubic-bezier(.2,1.6,.4,1)'});
+  }
+  function tira(tx, ty, r){
+    const sx = innerWidth - innerWidth*.12, sy = innerHeight*.62;
+    const p = document.createElement('div'); p.className = 'palla'; I.appendChild(p);
+    const mx = (sx+tx)/2, my = Math.min(sy,ty) - innerHeight*.25;
+    p.animate([
+      {transform:`translate(${sx}px,${sy}px) scale(.5)`},
+      {transform:`translate(${mx}px,${my}px) scale(1.1)`, offset:.5},
+      {transform:`translate(${tx}px,${ty}px) scale(${r/22})`}
+    ],{duration:380,easing:'cubic-bezier(.3,0,.7,1)'}).onfinish = () => { p.remove(); botto(tx, ty, r); };
+  }
+  const colpi = [[.22,.3],[.7,.22],[.45,.6],[.15,.72],[.82,.62],[.5,.25],[.32,.45]];
+  colpi.forEach((c,i) => dopo(450 + i*230, () => {
+    tira(innerWidth*c[0], innerHeight*c[1], Math.min(innerWidth,innerHeight)*(.16 + Math.random()*.08));
+  }));
+  dopo(2350, () => C.classList.add('piena'));
+  dopo(2750, () => T.classList.add('on'));
+  dopo(4100, chiudi);
+  function chiudi(){
+    timers.forEach(clearTimeout); I.classList.add('esce');
+    setTimeout(() => { I.remove(); document.documentElement.style.overflow = ''; }, 750);
+  }
+  I.addEventListener('click', chiudi);
+  addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.contains(I)) chiudi(); }, {once:true});
+})();
+
+function avviso(t){ const a = document.getElementById('avviso'); a.textContent = t; a.classList.add('on'); clearTimeout(avviso.t); avviso.t = setTimeout(() => a.classList.remove('on'), 3200); }
+</script>
+</body>
+</html>
