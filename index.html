@@ -109,7 +109,7 @@ header nav a.on{color:var(--lime)}
 .filtri button[aria-pressed=true]{background:var(--notte);border-color:var(--notte);color:#fff}
 
 /* schede prodotto: identiche al catalogo del sito */
-.griglia{display:grid;grid-template-columns:repeat(4,1fr);column-gap:14px;row-gap:96px;margin-top:104px}
+.griglia{display:grid;grid-template-columns:repeat(4,1fr);column-gap:14px;row-gap:32px;margin-top:48px}
 .cella{position:relative;isolation:isolate}
 .product-card{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--bordo);border-radius:16px;overflow:hidden;cursor:pointer;transition:box-shadow .3s,transform .3s var(--ease);animation:entra .6s var(--ease) both;animation-delay:calc(var(--i)*40ms)}
 .product-card:hover{box-shadow:0 10px 30px rgba(15,15,15,.08);transform:translateY(-2px)}
@@ -133,16 +133,6 @@ header nav a.on{color:var(--lime)}
 .product-card-add svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .vuoto{grid-column:1/-1;padding:48px 0;font-size:15px;color:var(--grigio)}
 
-/* i folletti che sbucano da dietro le schede */
-.folletto{position:absolute;z-index:0;top:0;width:118px;pointer-events:none;transform:translateY(24px) rotate(0deg);transition:transform .7s cubic-bezier(.34,1.4,.5,1)}
-.folletto.dx{right:14px}.folletto.sx{left:14px}
-.folletto img{width:100%;height:auto;filter:drop-shadow(0 6px 10px rgba(15,15,15,.18))}
-.cella.sbuca .folletto{transform:translateY(-88px) rotate(var(--rot,0deg))}
-.cella.sbuca .folletto.dx{--rot:6deg}.cella.sbuca .folletto.sx{--rot:-6deg}
-.fumetto{position:absolute;z-index:3;top:56px;max-width:calc(100% - 28px);background:#fff;color:var(--notte);font-size:13px;line-height:1.45;font-weight:500;padding:12px 14px;border-radius:14px;border:1px solid var(--bordo);box-shadow:0 12px 28px rgba(15,15,15,.14);opacity:0;transform:translateY(-6px) scale(.96);transition:opacity .3s,transform .4s var(--ease);pointer-events:none}
-.fumetto.dx{right:14px;border-top-right-radius:4px}.fumetto.sx{left:14px;border-top-left-radius:4px}
-.fumetto b{display:block;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lime-scuro);margin-bottom:4px}
-.cella.sbuca .fumetto{opacity:1;transform:none;transition-delay:.25s}
 
 /* il negozio, come "Più di un negozio" della home */
 .negozio{background:var(--nero);color:#fff;padding:112px 0 96px}
@@ -196,11 +186,7 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .persone .cap{left:14px;right:14px;bottom:12px}
   .persone strong{font-size:18px}
   .persone small{font-size:11px}
-  .griglia{grid-template-columns:repeat(2,1fr);column-gap:10px;row-gap:72px;margin-top:80px}
-  .folletto{width:88px}
-  .cella.sbuca .folletto{transform:translateY(-64px) rotate(var(--rot,0deg))}
-  .fumetto{font-size:12px;padding:10px 12px;top:44px;max-width:calc(100% - 16px)}
-  .fumetto.dx{right:8px}.fumetto.sx{left:8px}
+  .griglia{grid-template-columns:repeat(2,1fr);column-gap:10px;row-gap:24px;margin-top:32px}
   .product-card-body{padding:12px 12px 14px}
   .product-card-name{font-size:13px}
   .negozio{padding:72px 0 56px}
@@ -325,7 +311,7 @@ const LINK = s => 'https://troianocicli.it/pages/prodotto.html?slug=' + s;
   t(); setInterval(t, 1000);
 })();
 
-/* ---------- regali e folletti ---------- */
+/* ---------- regali ---------- */
 (() => {
   let gruppo = 'padel', max = 9999, nCarr = 0, timer, lato = 0;
   const g = document.getElementById('griglia');
@@ -335,15 +321,12 @@ const LINK = s => 'https://troianocicli.it/pages/prodotto.html?slug=' + s;
     const lista = PRODOTTI[gruppo].filter(p => p.p <= max).sort((a,b) => (!!b.tip - !!a.tip) || (b.neg - a.neg));
     lato = 0;
     g.innerHTML = lista.length ? lista.map((p,i) => {
-      const dove = p.tip ? (lato++ % 2 ? 'sx' : 'dx') : '';
-      return `<div class="cella" ${p.tip ? 'data-tip="1"' : ''}>
-        ${p.tip ? `<div class="folletto ${dove}"><img src="foto/folletto_${p.elfo}.png" alt=""></div>` : ''}
+      return `<div class="cella">
         <div class="product-card" style="--i:${i}" data-link="${LINK(p.s)}">
           <div class="product-card-img">
             ${p.neg ? '<span class="product-badge badge-showroom">Showroom</span>' : ''}
             <button class="wishlist-btn" title="Preferiti" aria-label="Aggiungi ai preferiti">${cuore}</button>
             <img src="${p.i}" alt="${p.n}" loading="lazy">
-            ${p.tip ? `<p class="fumetto ${dove}" role="note"><b>Il folletto consiglia</b>${p.tip}</p>` : ''}
           </div>
           <div class="product-card-body">
             <div class="product-card-brand">${p.b}</div>
@@ -352,28 +335,6 @@ const LINK = s => 'https://troianocicli.it/pages/prodotto.html?slug=' + s;
           </div>
         </div></div>`;
     }).join('') : `<p class="vuoto">In questa fascia di prezzo non abbiamo regali per questo gruppo. Prova un altro budget, o passa in negozio: qualcosa troviamo.</p>`;
-    avvia();
-  }
-  // ogni tanto un folletto si affaccia da dietro una scheda visibile, poi torna giù
-  const visibili = new Set();
-  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? visibili.add(e.target) : visibili.delete(e.target)), {threshold:.6});
-  let ultimo = null;
-  function sbuca(c, durata = 3600){
-    c.classList.add('sbuca'); clearTimeout(c._t);
-    c._t = setTimeout(() => c.classList.remove('sbuca'), durata);
-  }
-  function giro(){
-    const pronti = [...visibili].filter(c => c.isConnected && c !== ultimo);
-    if (pronti.length){ ultimo = pronti[Math.floor(Math.random()*pronti.length)]; sbuca(ultimo); }
-    timer = setTimeout(giro, 4800);
-  }
-  function avvia(){
-    visibili.clear(); io.disconnect(); clearTimeout(timer);
-    g.querySelectorAll('.cella[data-tip]').forEach(c => {
-      io.observe(c);
-      c.addEventListener('mouseenter', () => sbuca(c, 4200));
-    });
-    if (!ridotto) timer = setTimeout(giro, 900);
   }
   document.querySelectorAll('.persone button').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('.persone button').forEach(x => x.setAttribute('aria-selected', x === b));
