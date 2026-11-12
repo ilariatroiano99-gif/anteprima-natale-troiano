@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Regali di Natale · Troiano Cicli</title>
-<meta name="description" content="Idee regalo di Natale per chi gioca a padel, va in bici o si allena. Ordina entro il 15 dicembre per riceverlo prima di Natale, oppure ritira in negozio a Santa Maria Capua Vetere.">
+<meta name="description" content="Cerchi regali sportivi? Scopri padel, bici, abbigliamento e pensierini da Troiano Cicli, a Santa Maria Capua Vetere dal 1922.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -97,6 +97,11 @@ header nav a.on{color:var(--lime)}
 .persone .cap{position:absolute;left:20px;right:20px;bottom:18px;color:#fff}
 .persone strong{display:block;font-family:var(--titoli);font-weight:700;font-size:clamp(20px,2vw,28px);line-height:1.1}
 .persone small{display:block;font-size:12px;color:rgba(255,255,255,.75);margin-top:4px}
+.persone button.bianco{background:#eeebf0}
+.persone button.bianco img{transform:translateY(-9%);-webkit-mask-image:linear-gradient(180deg,#000 84%,transparent 97%);mask-image:linear-gradient(180deg,#000 84%,transparent 97%)}
+.persone button.bianco:hover img{transform:translateY(-9%) scale(1.03)}
+.persone button.bianco::after{display:none}
+.persone button.bianco .cap{color:var(--notte)}.persone button.bianco small{color:#4b5060}
 .persone button.lime{background:var(--lime)}
 .persone button.lime::after{display:none}
 .persone button.lime .cap{color:var(--nero)}.persone button.lime small{color:rgba(15,15,15,.6)}
@@ -151,18 +156,6 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 .avviso.on{opacity:1;transform:translate(-50%,0)}
 
 /* entrata: palle di neve, 5 secondi */
-.intro{position:fixed;inset:0;z-index:100;overflow:hidden;cursor:pointer}
-.intro .strato{position:absolute;inset:0}
-.intro .palla{position:absolute;left:0;top:0;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 40%,#e6e8ee 75%,#c3c8d3);box-shadow:0 8px 24px rgba(0,0,0,.25)}
-.intro .botto{position:absolute;left:0;top:0;pointer-events:none}
-.intro .coltre{position:absolute;inset:0;background:var(--fondo);clip-path:circle(0% at 50% 50%);transition:clip-path .55s cubic-bezier(.7,0,.3,1)}
-.intro .coltre.piena{clip-path:circle(150% at 50% 50%)}
-.intro .scritta{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding:16px;opacity:0;transform:scale(.94);transition:all .5s var(--ease)}
-.intro .scritta.on{opacity:1;transform:none}
-.intro .scritta .titolo{font-size:clamp(56px,10vw,150px)}
-.intro .scritta p{margin-top:20px}
-.intro.esce .strato{transform:translateY(105%);transition:transform .7s cubic-bezier(.7,0,.3,1)}
-.intro .salta{position:absolute;right:16px;top:16px;z-index:3;padding:8px 16px;border-radius:999px;background:var(--notte);color:#fff;font-size:12px;font-weight:600}
 
 @media (max-width:1024px){
   header nav{display:none}
@@ -214,9 +207,9 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   <img src="foto/gambe_scarpe.jpg" alt="Babbo Natale nella neve con le scarpe da padel Bullpadel Elite">
   <canvas id="neve" aria-hidden="true"></canvas>
   <div class="cont">
-    <div class="etichetta">Regali di Natale · Bici · Padel · Fitness</div>
-    <h1>Natale,<em>si gioca duro.</em></h1>
-    <p>A Natale niente regali a caso. Scegli quello giusto, che sia per giocare, pedalare o non stare mai fermi.</p>
+    <div class="etichetta">Regali di Natale · Padel · Bici · Abbigliamento</div>
+    <h1>Natale,<em>a tutto sport.</em></h1>
+    <p>Qualcuno ha già messo le mani sui regali. Meglio scegliere prima che spariscano.</p>
     <div class="bottoni">
       <a class="btn btn-bianco" href="#scegli">Trova il regalo <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8l5 5 5-5"/></svg></a>
       <a class="btn btn-vuoto" href="#negozio">Passa in negozio</a>
@@ -228,8 +221,8 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <section class="conto" aria-labelledby="titoloConto"><div class="cont">
   <div>
     <div class="etichetta" style="margin-bottom:12px">Spedizioni di Natale</div>
-    <h2 class="titolo" id="titoloConto">Il Natale<em>non aspetta.</em></h2>
-    <p>Ordina online entro il <b>15 dicembre</b> e ricevi il regalo prima di Natale. Dopo, il regalo si ritira in negozio.</p>
+    <h2 class="titolo" id="titoloConto">Ultima<em>chiamata.</em></h2>
+    <p>Per ricevere gli ordini prima di Natale, acquista online entro il <b>15 dicembre</b>. Dopo, solo ritiro in negozio.</p>
   </div>
   <div class="numeri">
     <div><strong id="gg">00</strong><small>Giorni</small></div>
@@ -241,44 +234,35 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 
 <section class="scegli" id="scegli" aria-labelledby="titoloScegli"><div class="cont">
   <div class="testa">
-    <div><div class="etichetta">Idee regalo</div><h2 class="titolo" id="titoloScegli">Chi vuoi<em>sorprendere?</em></h2></div>
+    <div><div class="etichetta">Idee regalo</div><h2 class="titolo" id="titoloScegli">Trova<em>il regalo.</em></h2></div>
   </div>
   <div class="persone" role="tablist" aria-label="Per chi è il regalo">
-    <button role="tab" aria-selected="true" data-g="padel"><img src="foto/n_padel.jpg" alt=""><span class="cap"><strong>Padel senza scuse</strong><small>Racchette, scarpe, borse</small></span></button>
-    <button role="tab" aria-selected="false" data-g="bici"><img src="foto/n_bici.jpg" alt=""><span class="cap"><strong>Sempre in sella</strong><small>Bici, caschi, luci</small></span></button>
-    <button role="tab" aria-selected="false" data-g="allenamento"><img src="foto/n_mano_verde.jpg" alt=""><span class="cap"><strong>Mai fermi</strong><small>Felpe, giubbotti, zaini</small></span></button>
-    <button role="tab" aria-selected="false" data-g="piccoli"><img src="foto/n_calza.jpg" alt=""><span class="cap"><strong>Pensierini</strong><small>Sotto i 30 euro</small></span></button>
+    <button role="tab" aria-selected="true" data-g="lei" class="bianco"><img src="foto/b_scarpa.jpg" alt=""><span class="cap"><strong>Per lei</strong><small>Padel, bici e abbigliamento</small></span></button>
+    <button role="tab" aria-selected="false" data-g="lui" class="bianco"><img src="foto/b_lui.jpg" alt=""><span class="cap"><strong>Per lui</strong><small>Padel, bici e abbigliamento</small></span></button>
+    <button role="tab" aria-selected="false" data-g="bambini" class="bianco"><img src="foto/b_bici.jpg" alt=""><span class="cap"><strong>Per bambini</strong><small>Bici, caschi e padel</small></span></button>
+    <button role="tab" aria-selected="false" data-g="piccoli" class="bianco"><img src="foto/b_tote.jpg" alt=""><span class="cap"><strong>Sotto i 30 €</strong><small>Pensierini per tutti</small></span></button>
   </div>
-  <div class="filtri" role="group" aria-label="Budget">
-    <button aria-pressed="true" data-max="9999">Tutti</button>
-    <button aria-pressed="false" data-max="30">Fino a 30 €</button>
-    <button aria-pressed="false" data-max="60">Fino a 60 €</button>
-    <button aria-pressed="false" data-max="100">Fino a 100 €</button>
-  </div>
+  <div class="filtri" role="group" aria-label="Per chi"></div>
   <div class="griglia" id="griglia" role="tabpanel"></div>
 </div></section>
 
 <section class="negozio" id="negozio" aria-labelledby="titoloCasa"><div class="cont">
   <div class="testa">
-    <div><div class="etichetta">Corso Aldo Moro 137 · SMCV</div><h2 class="titolo" id="titoloCasa">Il Natale<em>passa da qui.</em></h2></div>
+    <div><div class="etichetta">Corso Aldo Moro 137 · SMCV</div><h2 class="titolo" id="titoloCasa">Passa<em>da Troiano.</em></h2></div>
     <a class="btn btn-bianco" href="https://troianocicli.it/pages/appuntamento.html">Come arrivare</a>
   </div>
   <div class="servizi">
-    <div><svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M2 6h20v3H2zM12 6v15M12 6c-2-4-7-4-6 0M12 6c2-4 7-4 6 0"/></svg><b>Il pacchetto, se vuoi</b><span>Lo prepariamo su richiesta, con un costo aggiuntivo.</span></div>
-    <div><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 00-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><b>Ritira senza pagare</b><span>Il ritiro in negozio, in Corso Aldo Moro 137, è sempre gratuito.</span></div>
-    <div><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-15.5 6.2M3 12A9 9 0 0118.5 5.8"/><path d="M18 2v4h-4M6 22v-4h4"/></svg><b>Taglia sbagliata?</b><span>Nessun dramma, puoi cambiarla direttamente in negozio.</span></div>
+    <div><svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M2 6h20v3H2zM12 6v15M12 6c-2-4-7-4-6 0M12 6c2-4 7-4 6 0"/></svg><b>Ci pensiamo noi</b><span>Vuoi il pacchetto regalo? Lo prepariamo su richiesta, con un costo a parte.</span></div>
+    <div><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 00-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><b>Ritira gratis</b><span>Acquista online e ritira in Corso Aldo Moro 137. Il ritiro è sempre gratuito.</span></div>
+    <div><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-15.5 6.2M3 12A9 9 0 0118.5 5.8"/><path d="M18 2v4h-4M6 22v-4h4"/></svg><b>Taglia sbagliata?</b><span>Nessun dramma. Se la taglia non va, la cambi in negozio.</span></div>
   </div>
 </div></section>
 <footer><div class="cont"><span>Troiano Cicli · dal 1922</span><span>Corso Aldo Moro 137 · Santa Maria Capua Vetere</span></div></footer>
 
 <div class="avviso" id="avviso" role="status"></div>
-<div class="intro" id="intro" aria-hidden="true" hidden>
-  <div class="strato" id="strato"><div class="coltre" id="coltre"></div><div class="scritta" id="scritta"><h2 class="titolo">Babbo,<em>che partita.</em></h2><p class="etichetta">Quest'anno il Natale si gioca</p></div></div>
-  <button class="salta" id="saltaIntro">Salta</button>
-</div>
 
 <script>
-const PRODOTTI = {"padel": [{"n": "Racchetta StarVie Tritón 2024", "b": "StarVie", "p": 159.0, "s": "starvie-triton-2024", "i": "sch/rc-starvie-triton-2024-1.png", "neg": true, "elfo": "indica", "tip": "StarVie Tritón a 159 euro. È qui, la provi e spendi circa la metà delle top da 299."}, {"n": "Scarpe Bullpadel Indiga W 26V", "b": "Bullpadel", "p": 60.0, "s": "scarpe-bullpadel-indiga-w-26v", "i": "sch/BPS07c1.png", "neg": true, "elfo": "pollice", "tip": "Scarpe Bullpadel già in negozio. Le provi prima di regalarle, così vai sul sicuro."}, {"n": "Racchetta Bullpadel Hack 05 2027", "b": "Bullpadel", "p": 299.0, "s": "bullpadel-hack-05-2027", "i": "sch/rc-bullpadel-hack-05-2027-1.png", "neg": true}, {"n": "Racchetta Bullpadel Elite W 02 2027", "b": "Bullpadel", "p": 259.0, "s": "bullpadel-elite-w-02-2027", "i": "sch/rc-bullpadel-elite-w-02-2027-1.png", "neg": true}, {"n": "Scarpe Bullpadel Elite 26V", "b": "Bullpadel", "p": 112.0, "s": "scarpe-bullpadel-elite-26v", "i": "sch/BPS08c1.png", "neg": true}, {"n": "Borsa Bullpadel Bpp 26024 Wonder", "b": "Bullpadel", "p": 69.0, "s": "borsa-bullpadel-bpp-26024-wonder", "i": "sch/ext-immagine22-676x926-b9c635.png", "neg": true}, {"n": "SAN PAOLO Borsone Padel Nero e Bianco", "b": "X3 Por Tres", "p": 85.0, "s": "san-paolo-borsone-padel-nero-e-bianco", "i": "sch/x3-san-paolo-borsone-padel-nero-e-bianco-1.png", "neg": false}, {"n": "BAHIA Borsone Bianco/Fucsia", "b": "X3 Por Tres", "p": 70.0, "s": "bahia-borsone-bianco-fucsia", "i": "sch/x3-bahia-borsone-bianco-fucsia-1.png", "neg": false}, {"n": "Scarpe Bullpadel Icon 26V", "b": "Bullpadel", "p": 100.0, "s": "scarpe-bullpadel-icon-26v", "i": "sch/BPS09c1.png", "neg": true}, {"n": "Scarpe Bullpadel Perf Comfort W 26V", "b": "Bullpadel", "p": 76.0, "s": "scarpe-bullpadel-perf-comfort-w-26v", "i": "sch/BPS06c1.png", "neg": true}], "bici": [{"n": "Bici Spiderman 16 N03", "b": null, "p": 160.0, "s": "bici-spiderman-16-n03", "i": "sch/bici-spiderman-16-n03.png", "neg": true, "elfo": "indica", "tip": "Bici da 14 e 16 pollici da 150 euro. Sono qui, pronte per finire sotto l'albero."}, {"n": "Bici Maui Uomo", "b": "MBM", "p": 469.0, "s": "maui-uomo", "i": "sch/ext-maui-green-570x445-1-3f3f50.png", "neg": true}, {"n": "Bici Wish 16 N01", "b": null, "p": 160.0, "s": "bici-wish-16-n01", "i": "sch/bici-wish-16-n01.png", "neg": true}, {"n": "Bici BMX 14 N03", "b": null, "p": 150.0, "s": "bici-bmx-14-n03", "i": "sch/44206.png", "neg": true}, {"n": "Casco BRN Veloce Vintage Bianco", "b": "BRN", "p": 68.0, "s": "casco-brn-veloce-vintage-bianco", "i": "sch/cas41b.png", "neg": false}, {"n": "Fanale Knog Cobber Reflex Anteriore", "b": "Knog", "p": 69.9, "s": "fanale-knog-cobber-reflex-anteriore", "i": "sch/kn94a.png", "neg": false}, {"n": "Antifurto Knog Scout Compatibile Apple", "b": "Knog", "p": 59.9, "s": "antifurto-knog-scout-compatibile-apple", "i": "sch/kn100.png", "neg": false}, {"n": "Borsetta Brooks Challenge Large Honey", "b": "Brooks", "p": 115.0, "s": "borsetta-brooks-challenge-large-honey", "i": "sch/br98h.png", "neg": false}, {"n": "Occhiali Altalist Kaku SP2 Fotocromatici VIV20 Oro/Giallo Sabbia", "b": "Altalist", "p": 79.0, "s": "occhiali-altalist-kaku-sp2-fotocromatici-viv20-orogiallo-sabbia", "i": "sch/al0805.png", "neg": false}, {"n": "Bici Princess 14 N01", "b": null, "p": 150.0, "s": "bici-princess-14-n01", "i": "sch/bici-princess-14-n01.png", "neg": true}, {"n": "Bici Candy 16", "b": "MBM", "p": 189.0, "s": "candy-16", "i": "sch/ext-candy-16-570x445-rosa-19dffc.png", "neg": true}], "allenamento": [{"n": "ONTARIO Nero Felpa crop donna con cappuccio", "b": "X3 Por Tres", "p": 53.0, "s": "ontario-nero-felpa-crop-donna-con-cappuccio", "i": "sch/x3-ontario-nero-felpa-crop-donna-con-cappuccio-1.png", "neg": true, "elfo": "pollice", "tip": "Felpe X3 Por Tres da 50 a 53 euro, in più taglie. Se sbagli, cambi in negozio."}, {"n": "MONTREAL Nera Felpa Donna con cappuccio e tasca", "b": "X3 Por Tres", "p": 53.0, "s": "montreal-nera-felpa-donna-con-cappuccio-e-tasca", "i": "sch/x3-montreal-nera-felpa-donna-con-cappuccio-e-tasca-1.png", "neg": true}, {"n": "MALI Nero- Felpa in caldo cotone", "b": "X3 Por Tres", "p": 50.0, "s": "mali-nero-felpa-in-caldo-cotone", "i": "sch/x3-mali-nero-felpa-in-caldo-cotone-1.png", "neg": true}, {"n": "FLORIDA Nero- Pantalone in cotone caldo", "b": "X3 Por Tres", "p": 47.5, "s": "florida-nero-pantalone-in-cotone-caldo", "i": "sch/x3-florida-nero-pantalone-in-cotone-caldo-1.png", "neg": true}, {"n": "BOLIVIA Verde Militare- giubbotto invernale con pile interno", "b": "X3 Por Tres", "p": 85.0, "s": "bolivia-verde-militare-giubbotto-invernale-con-pile-interno", "i": "sch/x3-bolivia-verde-militare-giubbotto-invernale-con-pile-interno-1.png", "neg": false}, {"n": "NEVADA Sabbia - Felpa full zip in cotone caldo", "b": "X3 Por Tres", "p": 57.0, "s": "nevada-sabbia-felpa-full-zip-in-cotone-caldo", "i": "sch/x3-nevada-sabbia-felpa-full-zip-in-cotone-caldo-1.png", "neg": false}, {"n": "KANSAS Off White- Felpa in cotone caldo con marsupio", "b": "X3 Por Tres", "p": 55.0, "s": "kansas-off-white-felpa-in-cotone-caldo-con-marsupio", "i": "sch/x3-kansas-off-white-felpa-in-cotone-caldo-con-marsupio-1.png", "neg": false}, {"n": "PARANà - Zaino Backpack Nero e Bianco", "b": "X3 Por Tres", "p": 60.0, "s": "parana-zaino-backpack-nero-e-bianco", "i": "sch/x3-parana-zaino-backpack-nero-e-bianco-1.png", "neg": false}, {"n": "UNGHERIA Verde Vestito", "b": "X3 Por Tres", "p": 65.0, "s": "ungheria-verde-vestito", "i": "sch/x3-ungheria-verde-vestito-1.png", "neg": true}, {"n": "OTTAWA Nero - Pantalone donna felpa", "b": "X3 Por Tres", "p": 45.0, "s": "ottawa-nero-pantalone-donna-felpa", "i": "sch/x3-ottawa-nero-pantalone-donna-felpa-1.png", "neg": true}, {"n": "ALBERTA Grigio - Pantalone felpa donna X3 Por Tres – modello a zampa", "b": "X3 Por Tres", "p": 47.0, "s": "alberta-grigio-pantalone-felpa-donna-x3-por-tres-modello-a-zampa", "i": "sch/x3-alberta-grigio-pantalone-felpa-donna-x3-por-tres-modello-a-zampa-1.png", "neg": true}], "piccoli": [{"n": "Maglia tecnica Troiano Cicli Donna", "b": "F.Troiano", "p": 12.5, "s": "maglia-tecnica-troiano-cicli-donna", "i": "sch/maglia-troiano-donna-nero-1-davanti.png", "neg": true, "elfo": "indica", "tip": "La maglia tecnica Troiano Cicli a 12,50 euro. È in negozio e la trovi solo da noi."}, {"n": "CALZE - CAPSULE LAZIO", "b": "X3 Por Tres", "p": 8.5, "s": "calze-capsule-lazio", "i": "sch/x3-calze-capsule-lazio-1.png", "neg": true}, {"n": "MADRID Fascia Bianca", "b": "X3 Por Tres", "p": 12.0, "s": "madrid-fascia-bianca", "i": "sch/x3-madrid-fascia-bianca-1.png", "neg": false}, {"n": "Calze ESSENTIAL Lunghe Bianche con Logo Fucsia 100% Cotone", "b": "X3 Por Tres", "p": 7.0, "s": "calze-essential-lunghe-bianche-con-logo-fucsia-100-cotone", "i": "sch/x3-calze-essential-lunghe-bianche-con-logo-fucsia-100-cotone-1.png", "neg": true}, {"n": "Caschetto Bici Princess", "b": null, "p": 29.0, "s": "caschetto-bici-princess-1", "i": "sch/35246.png", "neg": true}, {"n": "Campanello Knog Oi Prima Small Primer Grey", "b": "Knog", "p": 29.9, "s": "campanello-knog-oi-prima-small-primer-grey", "i": "sch/kn89s.png", "neg": false}, {"n": "Campanello BRN Anita Dorato 40 MM", "b": "BRN", "p": 18.0, "s": "campanello-brn-anita-dorato-40-mm", "i": "sch/cam50o.png", "neg": false}, {"n": "Calze ESSENTIAL Lunghe Nere con Logo Giallo 100% Cotone", "b": "X3 Por Tres", "p": 7.0, "s": "calze-essential-lunghe-nere-con-logo-giallo-100-cotone", "i": "sch/x3-calze-essential-lunghe-nere-con-logo-giallo-100-cotone-1.png", "neg": true}]};
+const PRODOTTI = {"lei": [{"n": "Racchetta Bullpadel Elite W 02 2027", "b": "Bullpadel", "p": 259.0, "s": "bullpadel-elite-w-02-2027", "i": "sch/rc-bullpadel-elite-w-02-2027-1.png", "neg": true, "f": "padel"}, {"n": "Racchetta Bullpadel Vertex 05 W 2027", "b": "Bullpadel", "p": 259.0, "s": "bullpadel-vertex-05-w-2027", "i": "sch/n-bullpadel-vertex-05-w-2027.png", "neg": true, "f": "padel"}, {"n": "Scarpe Bullpadel Perf Comfort W 26V", "b": "Bullpadel", "p": 76.0, "s": "scarpe-bullpadel-perf-comfort-w-26v", "i": "sch/BPS06c1.png", "neg": true, "f": "padel"}, {"n": "Scarpe Bullpadel Indiga W 26V", "b": "Bullpadel", "p": 60.0, "s": "scarpe-bullpadel-indiga-w-26v", "i": "sch/BPS07c1.png", "neg": true, "f": "padel"}, {"n": "Gonna da Gioco Bullpadel Donna", "b": "Bullpadel", "p": 46.0, "s": "gonna-da-gioco-bullpadel-donna", "i": "sch/n-gonna-da-gioco-bullpadel-donna.png", "neg": true, "f": "padel"}, {"n": "Polo da Gioco Bullpadel Donna", "b": "Bullpadel", "p": 40.0, "s": "polo-da-gioco-bullpadel-donna", "i": "sch/n-polo-da-gioco-bullpadel-donna.png", "neg": true, "f": "padel"}, {"n": "Canotta da Gioco Bullpadel Donna", "b": "Bullpadel", "p": 32.0, "s": "canotta-da-gioco-bullpadel-donna", "i": "sch/n-canotta-da-gioco-bullpadel-donna.png", "neg": true, "f": "padel"}, {"n": "Gonna tecnica Troiano Cicli Donna", "b": "F.Troiano", "p": 32.5, "s": "gonna-tecnica-troiano-cicli-donna", "i": "sch/n-gonna-tecnica-troiano-cicli-donna.png", "neg": true, "f": "padel"}, {"n": "Borsa Bullpadel Bpp 26024 Wonder", "b": "Bullpadel", "p": 69.0, "s": "borsa-bullpadel-bpp-26024-wonder", "i": "sch/ext-immagine22-676x926-b9c635.png", "neg": true, "f": "padel"}, {"n": "BAHIA Borsone Bianco/Fucsia", "b": "X3 Por Tres", "p": 70.0, "s": "bahia-borsone-bianco-fucsia", "i": "sch/x3-bahia-borsone-bianco-fucsia-1.png", "neg": false, "f": "padel"}, {"n": "Maglia BRN Donna Cross Road Nera/Fucsia Fluo S-L", "b": "BRN", "p": 59.5, "s": "maglia-brn-cross-road-nerafucsia-fluo", "i": "sch/n-maglia-brn-cross-road-nerafucsia-fluo.png", "neg": true, "f": "bici"}, {"n": "Casco BRN Veloce Vintage Bianco", "b": "BRN", "p": 68.0, "s": "casco-brn-veloce-vintage-bianco", "i": "sch/cas41b.png", "neg": false, "f": "bici"}, {"n": "Borsetta Brooks Challenge Large Honey", "b": "Brooks", "p": 115.0, "s": "borsetta-brooks-challenge-large-honey", "i": "sch/br98h.png", "neg": false, "f": "bici"}, {"n": "ONTARIO Nero Felpa crop donna con cappuccio", "b": "X3 Por Tres", "p": 53.0, "s": "ontario-nero-felpa-crop-donna-con-cappuccio", "i": "sch/x3-ontario-nero-felpa-crop-donna-con-cappuccio-1.png", "neg": true, "f": "abb"}, {"n": "MONTREAL Nera Felpa Donna con cappuccio e tasca", "b": "X3 Por Tres", "p": 53.0, "s": "montreal-nera-felpa-donna-con-cappuccio-e-tasca", "i": "sch/x3-montreal-nera-felpa-donna-con-cappuccio-e-tasca-1.png", "neg": true, "f": "abb"}, {"n": "SENEGAL Nera Felpa Donna", "b": "X3 Por Tres", "p": 30.0, "s": "senegal-nera-felpa-donna", "i": "sch/n-senegal-nera-felpa-donna.png", "neg": true, "f": "abb"}, {"n": "OTTAWA Nero - Pantalone donna felpa", "b": "X3 Por Tres", "p": 45.0, "s": "ottawa-nero-pantalone-donna-felpa", "i": "sch/x3-ottawa-nero-pantalone-donna-felpa-1.png", "neg": true, "f": "abb"}, {"n": "ALBERTA Grigio - Pantalone felpa donna X3 Por Tres – modello a zampa", "b": "X3 Por Tres", "p": 47.0, "s": "alberta-grigio-pantalone-felpa-donna-x3-por-tres-modello-a-zampa", "i": "sch/x3-alberta-grigio-pantalone-felpa-donna-x3-por-tres-modello-a-zampa-1.png", "neg": true, "f": "abb"}, {"n": "UNGHERIA Verde Vestito", "b": "X3 Por Tres", "p": 65.0, "s": "ungheria-verde-vestito", "i": "sch/x3-ungheria-verde-vestito-1.png", "neg": true, "f": "abb"}, {"n": "FRANCIA Vestito Nero", "b": "X3 Por Tres", "p": 32.5, "s": "francia-vestito-nero", "i": "sch/n-francia-vestito-nero.png", "neg": true, "f": "abb"}, {"n": "Charlotte Military T-shirt Donna", "b": "X3 Por Tres", "p": 40.0, "s": "charlotte-military-t-shirt-donna", "i": "sch/n-charlotte-military-t-shirt-donna.png", "neg": true, "f": "abb"}, {"n": "PORTOGALLO Nero T-shirt Donna", "b": "X3 Por Tres", "p": 40.0, "s": "portogallo-nero-t-shirt-donna", "i": "sch/n-portogallo-nero-t-shirt-donna.png", "neg": true, "f": "abb"}], "lui": [{"n": "Racchetta Bullpadel Hack 05 2027", "b": "Bullpadel", "p": 299.0, "s": "bullpadel-hack-05-2027", "i": "sch/rc-bullpadel-hack-05-2027-1.png", "neg": true, "f": "padel"}, {"n": "Racchetta Bullpadel Vertex 05 2027", "b": "Bullpadel", "p": 299.0, "s": "bullpadel-vertex-05-2027", "i": "sch/n-bullpadel-vertex-05-2027.png", "neg": true, "f": "padel"}, {"n": "Racchetta Bullpadel Neuron 2027", "b": "Bullpadel", "p": 299.0, "s": "bullpadel-neuron-2027", "i": "sch/n-bullpadel-neuron-2027.png", "neg": true, "f": "padel"}, {"n": "Racchetta StarVie Kenta Eternal 2024", "b": "StarVie", "p": 169.0, "s": "starvie-kenta-eternal-2024", "i": "sch/n-starvie-kenta-eternal-2024.png", "neg": true, "f": "padel"}, {"n": "Racchetta StarVie Tritón 2024", "b": "StarVie", "p": 159.0, "s": "starvie-triton-2024", "i": "sch/rc-starvie-triton-2024-1.png", "neg": true, "f": "padel"}, {"n": "Scarpe Bullpadel Elite 26V", "b": "Bullpadel", "p": 112.0, "s": "scarpe-bullpadel-elite-26v", "i": "sch/BPS08c1.png", "neg": true, "f": "padel"}, {"n": "Scarpe Bullpadel Icon 26V", "b": "Bullpadel", "p": 100.0, "s": "scarpe-bullpadel-icon-26v", "i": "sch/BPS09c1.png", "neg": true, "f": "padel"}, {"n": "Scarpe Bullpadel Hybrid Fly 26V", "b": "Bullpadel", "p": 80.0, "s": "scarpe-bullpadel-hybrid-fly-26v", "i": "sch/n-scarpe-bullpadel-hybrid-fly-26v.png", "neg": true, "f": "padel"}, {"n": "Scarpe Bullpadel Indiga 26V", "b": "Bullpadel", "p": 60.0, "s": "scarpe-bullpadel-indiga-26v", "i": "sch/n-scarpe-bullpadel-indiga-26v.png", "neg": true, "f": "padel"}, {"n": "Borsa Bullpadel Bpp 26015 Tour 005", "b": "Bullpadel", "p": 36.0, "s": "borsa-bullpadel-bpp-26015-tour-005", "i": "sch/n-borsa-bullpadel-bpp-26015-tour-005.png", "neg": true, "f": "padel"}, {"n": "Borsa Bullpadel Bpp 26015 Tour 012", "b": "Bullpadel", "p": 36.0, "s": "borsa-bullpadel-bpp-26015-tour-012", "i": "sch/n-borsa-bullpadel-bpp-26015-tour-012.png", "neg": true, "f": "padel"}, {"n": "SAN PAOLO Borsone Padel Nero e Bianco", "b": "X3 Por Tres", "p": 85.0, "s": "san-paolo-borsone-padel-nero-e-bianco", "i": "sch/x3-san-paolo-borsone-padel-nero-e-bianco-1.png", "neg": false, "f": "padel"}, {"n": "Maglia BRN Cross Road Nera/Italia M", "b": "BRN", "p": 59.5, "s": "maglia-brn-cross-road-neraitalia", "i": "sch/n-maglia-brn-cross-road-neraitalia.png", "neg": true, "f": "bici"}, {"n": "Fanale Knog Cobber Reflex Anteriore", "b": "Knog", "p": 69.9, "s": "fanale-knog-cobber-reflex-anteriore", "i": "sch/kn94a.png", "neg": false, "f": "bici"}, {"n": "Antifurto Knog Scout Compatibile Apple", "b": "Knog", "p": 59.9, "s": "antifurto-knog-scout-compatibile-apple", "i": "sch/kn100.png", "neg": false, "f": "bici"}, {"n": "Occhiali Altalist Kaku SP2 Fotocromatici VIV20 Oro/Giallo Sabbia", "b": "Altalist", "p": 79.0, "s": "occhiali-altalist-kaku-sp2-fotocromatici-viv20-orogiallo-sabbia", "i": "sch/al0805.png", "neg": false, "f": "bici"}, {"n": "MALI Nero- Felpa in caldo cotone", "b": "X3 Por Tres", "p": 50.0, "s": "mali-nero-felpa-in-caldo-cotone", "i": "sch/x3-mali-nero-felpa-in-caldo-cotone-1.png", "neg": true, "f": "abb"}, {"n": "FLORIDA Nero- Pantalone in cotone caldo", "b": "X3 Por Tres", "p": 47.5, "s": "florida-nero-pantalone-in-cotone-caldo", "i": "sch/x3-florida-nero-pantalone-in-cotone-caldo-1.png", "neg": true, "f": "abb"}, {"n": "HOUSTON Bianca Felpa full zip con cappuccio", "b": "X3 Por Tres", "p": 40.0, "s": "houston-bianca-felpa-full-zip-con-cappuccio", "i": "sch/n-houston-bianca-felpa-full-zip-con-cappuccio.png", "neg": true, "f": "abb"}, {"n": "BOLIVIA Verde Militare- giubbotto invernale con pile interno", "b": "X3 Por Tres", "p": 85.0, "s": "bolivia-verde-militare-giubbotto-invernale-con-pile-interno", "i": "sch/x3-bolivia-verde-militare-giubbotto-invernale-con-pile-interno-1.png", "neg": false, "f": "abb"}, {"n": "NEVADA Sabbia - Felpa full zip in cotone caldo", "b": "X3 Por Tres", "p": 57.0, "s": "nevada-sabbia-felpa-full-zip-in-cotone-caldo", "i": "sch/x3-nevada-sabbia-felpa-full-zip-in-cotone-caldo-1.png", "neg": false, "f": "abb"}, {"n": "KANSAS Off White- Felpa in cotone caldo con marsupio", "b": "X3 Por Tres", "p": 55.0, "s": "kansas-off-white-felpa-in-cotone-caldo-con-marsupio", "i": "sch/x3-kansas-off-white-felpa-in-cotone-caldo-con-marsupio-1.png", "neg": false, "f": "abb"}, {"n": "PARANà - Zaino Backpack Nero e Bianco", "b": "X3 Por Tres", "p": 60.0, "s": "parana-zaino-backpack-nero-e-bianco", "i": "sch/x3-parana-zaino-backpack-nero-e-bianco-1.png", "neg": false, "f": "abb"}, {"n": "BOMBONERA T-shirt Uomo Celeste", "b": "X3 Por Tres", "p": 42.5, "s": "bombonera-t-shirt-uomo-celeste", "i": "sch/n-bombonera-t-shirt-uomo-celeste.png", "neg": true, "f": "abb"}, {"n": "SAN SIRO T-shirt Uomo", "b": "X3 Por Tres", "p": 42.5, "s": "san-siro-t-shirt-uomo", "i": "sch/n-san-siro-t-shirt-uomo.png", "neg": true, "f": "abb"}, {"n": "OLYMPIASTADION T-shirt Uomo Nero", "b": "X3 Por Tres", "p": 42.5, "s": "olympiastadion-t-shirt-uomo-nero", "i": "sch/n-olympiastadion-t-shirt-uomo-nero.png", "neg": true, "f": "abb"}], "bambini": [{"n": "Bici Princess 14 N01", "b": "", "p": 150.0, "s": "bici-princess-14-n01", "i": "sch/bici-princess-14-n01.png", "neg": true, "f": "bimba"}, {"n": "Bici Princess 16 N01", "b": "", "p": 160.0, "s": "bici-princess-16-n01", "i": "sch/n-bici-princess-16-n01.png", "neg": true, "f": "bimba"}, {"n": "Bici Wish 16 N01", "b": "", "p": 160.0, "s": "bici-wish-16-n01", "i": "sch/bici-wish-16-n01.png", "neg": true, "f": "bimba"}, {"n": "Bici Minnie 14 N01", "b": "", "p": 150.0, "s": "bici-minnie-14-n01", "i": "sch/n-bici-minnie-14-n01.png", "neg": true, "f": "bimba"}, {"n": "Bici Frozen 14 N03", "b": "", "p": 150.0, "s": "bici-frozen-14-n03", "i": "sch/n-bici-frozen-14-n03.png", "neg": true, "f": "bimba"}, {"n": "Bici Frozen 16 N03", "b": "", "p": 160.0, "s": "bici-frozen-16-n03", "i": "sch/n-bici-frozen-16-n03.png", "neg": true, "f": "bimba"}, {"n": "Bici Barbie 16 N01", "b": "", "p": 160.0, "s": "bici-barbie-16-n01", "i": "sch/n-bici-barbie-16-n01.png", "neg": true, "f": "bimba"}, {"n": "Bici Candy 16", "b": "MBM", "p": 189.0, "s": "candy-16", "i": "sch/ext-candy-16-570x445-rosa-19dffc.png", "neg": true, "f": "bimba"}, {"n": "Bici Spiderman 14 N01", "b": "", "p": 150.0, "s": "bici-spiderman-14-n01", "i": "sch/n-bici-spiderman-14-n01.png", "neg": true, "f": "bimbo"}, {"n": "Bici Spiderman 16 N03", "b": "", "p": 160.0, "s": "bici-spiderman-16-n03", "i": "sch/bici-spiderman-16-n03.png", "neg": true, "f": "bimbo"}, {"n": "Bici Cars 14 N01", "b": "", "p": 150.0, "s": "bici-cars-14-n01", "i": "sch/n-bici-cars-14-n01.png", "neg": true, "f": "bimbo"}, {"n": "Bici BMX 14 N03", "b": "", "p": 150.0, "s": "bici-bmx-14-n03", "i": "sch/44206.png", "neg": true, "f": "bimbo"}, {"n": "Bici BMX 16 N03", "b": "", "p": 160.0, "s": "bici-bmx-16-n03", "i": "sch/n-bici-bmx-16-n03.png", "neg": true, "f": "bimbo"}, {"n": "Bici Stitch Blu 14 N01", "b": "", "p": 150.0, "s": "bici-stitch-blu-14-n01", "i": "sch/n-bici-stitch-blu-14-n01.png", "neg": true, "f": "bimbo"}, {"n": "Bici BMX Instinct", "b": "MBM", "p": 245.0, "s": "instinct", "i": "sch/n-instinct.png", "neg": true, "f": "bimbo"}, {"n": "Caschetto Bici Princess", "b": "", "p": 29.0, "s": "caschetto-bici-princess-1", "i": "sch/35246.png", "neg": true, "f": "caschi"}, {"n": "Caschetto Bici Spiderman", "b": "", "p": 29.0, "s": "caschetto-bici-spiderman", "i": "sch/n-caschetto-bici-spiderman.png", "neg": true, "f": "caschi"}, {"n": "Caschetto Bici Minnie", "b": "", "p": 29.0, "s": "caschetto-bici-minnie", "i": "sch/n-caschetto-bici-minnie.png", "neg": true, "f": "caschi"}, {"n": "Caschetto Bici Paw Pat Girl", "b": "", "p": 29.0, "s": "caschetto-bici-paw-pat-girl", "i": "sch/n-caschetto-bici-paw-pat-girl.png", "neg": true, "f": "caschi"}, {"n": "Caschetto Bici 44 Gatti", "b": "", "p": 29.0, "s": "caschetto-bici-44-gatti", "i": "sch/n-caschetto-bici-44-gatti.png", "neg": true, "f": "caschi"}, {"n": "Campanello Metal Paw Patrol", "b": "", "p": 7.5, "s": "campanello-metal-paw-patrol", "i": "sch/n-campanello-metal-paw-patrol.png", "neg": true, "f": "caschi"}, {"n": "Campanello Metal Barbie", "b": "", "p": 7.5, "s": "campanello-metal-barbie", "i": "sch/n-campanello-metal-barbie.png", "neg": true, "f": "caschi"}, {"n": "Trombetta - Frozen II", "b": "", "p": 9.0, "s": "trombetta-frozen-ii", "i": "sch/n-trombetta-frozen-ii.png", "neg": true, "f": "caschi"}, {"n": "Trombetta Bici Cars", "b": "", "p": 9.0, "s": "trombetta-bici-cars", "i": "sch/n-trombetta-bici-cars.png", "neg": true, "f": "caschi"}, {"n": "Racchetta Nox AT10 Genius Jr", "b": "Nox", "p": 52.0, "s": "nox-at10-genius-jr", "i": "sch/n-nox-at10-genius-jr.png", "neg": true, "f": "padel"}, {"n": "Canotta da Gioco Bullpadel Junior", "b": "Bullpadel", "p": 30.0, "s": "canotta-da-gioco-bullpadel-junior", "i": "sch/n-canotta-da-gioco-bullpadel-junior.png", "neg": true, "f": "padel"}, {"n": "Gonna da Gioco Bullpadel Junior", "b": "Bullpadel", "p": 44.0, "s": "gonna-da-gioco-bullpadel-junior", "i": "sch/n-gonna-da-gioco-bullpadel-junior.png", "neg": true, "f": "padel"}, {"n": "Short da Gioco Bullpadel Junior", "b": "Bullpadel", "p": 30.0, "s": "short-da-gioco-bullpadel-junior", "i": "sch/n-short-da-gioco-bullpadel-junior.png", "neg": true, "f": "padel"}, {"n": "SAN ANTONIO Off White Pantalone Kids", "b": "X3 Por Tres", "p": 37.0, "s": "san-antonio-off-white-pantalone-kids", "i": "sch/n-san-antonio-off-white-pantalone-kids.png", "neg": true, "f": "padel"}], "piccoli": [{"n": "CALZE - CAPSULE LAZIO", "b": "X3 Por Tres", "p": 8.5, "s": "calze-capsule-lazio", "i": "sch/x3-calze-capsule-lazio-1.png", "neg": true, "f": "padel"}, {"n": "Calze ESSENTIAL Lunghe Bianche con Logo Fucsia 100% Cotone", "b": "X3 Por Tres", "p": 7.0, "s": "calze-essential-lunghe-bianche-con-logo-fucsia-100-cotone", "i": "sch/x3-calze-essential-lunghe-bianche-con-logo-fucsia-100-cotone-1.png", "neg": true, "f": "padel"}, {"n": "Calze ESSENTIAL Lunghe Nere con Logo Giallo 100% Cotone", "b": "X3 Por Tres", "p": 7.0, "s": "calze-essential-lunghe-nere-con-logo-giallo-100-cotone", "i": "sch/x3-calze-essential-lunghe-nere-con-logo-giallo-100-cotone-1.png", "neg": true, "f": "padel"}, {"n": "Bullpadel Premium Pro 3 tubi di palline", "b": "Bullpadel", "p": 15.0, "s": "bullpadel-premium-pro-3-tubi-di-palline", "i": "sch/n-bullpadel-premium-pro-3-tubi-di-palline.png", "neg": true, "f": "padel"}, {"n": "BOSTON Verde Telo Spugna", "b": "X3 Por Tres", "p": 17.5, "s": "boston-verde-telo-spugna", "i": "sch/n-boston-verde-telo-spugna.png", "neg": true, "f": "padel"}, {"n": "MANICOTTO Protettivo Nero", "b": "X3 Por Tres", "p": 15.0, "s": "manicotto-protettivo-nero", "i": "sch/n-manicotto-protettivo-nero.png", "neg": true, "f": "padel"}, {"n": "CAPPELLO TENNIS -  CAPSULE LAZIO BIANCO", "b": "X3 Por Tres", "p": 20.5, "s": "cappello-tennis-capsule-lazio-bianco", "i": "sch/n-cappello-tennis-capsule-lazio-bianco.png", "neg": true, "f": "padel"}, {"n": "URUGUAY Nero Leggings corti Donna", "b": "X3 Por Tres", "p": 25.0, "s": "uruguay-nero-leggings-corti-donna", "i": "sch/n-uruguay-nero-leggings-corti-donna.png", "neg": true, "f": "padel"}, {"n": "MADRID Fascia Bianca", "b": "X3 Por Tres", "p": 12.0, "s": "madrid-fascia-bianca", "i": "sch/x3-madrid-fascia-bianca-1.png", "neg": false, "f": "padel"}, {"n": "Campanello BRN Anita Dorato 40 MM", "b": "BRN", "p": 18.0, "s": "campanello-brn-anita-dorato-40-mm", "i": "sch/cam50o.png", "neg": false, "f": "bici"}, {"n": "Campanello Knog Oi Prima Small Primer Grey", "b": "Knog", "p": 29.9, "s": "campanello-knog-oi-prima-small-primer-grey", "i": "sch/kn89s.png", "neg": false, "f": "bici"}, {"n": "Tote Bag Troiano Cicli Cycling", "b": "F.Troiano", "p": 24.9, "s": "tote-bag-troiano-cicli-cycling", "i": "sch/tote-cycling-troiano.png", "neg": false, "f": "troiano"}, {"n": "Maglia tecnica Troiano Cicli Donna", "b": "F.Troiano", "p": 12.5, "s": "maglia-tecnica-troiano-cicli-donna", "i": "sch/maglia-troiano-donna-nero-1-davanti.png", "neg": true, "f": "troiano"}, {"n": "Maglia tecnica Troiano Cicli Uomo", "b": "F.Troiano", "p": 12.5, "s": "maglia-tecnica-troiano-cicli-uomo", "i": "sch/n-maglia-tecnica-troiano-cicli-uomo.png", "neg": true, "f": "troiano"}, {"n": "Canotta tecnica Troiano Cicli Donna", "b": "F.Troiano", "p": 16.5, "s": "canotta-tecnica-troiano-cicli-donna", "i": "sch/n-canotta-tecnica-troiano-cicli-donna.png", "neg": true, "f": "troiano"}, {"n": "Pantaloncino tecnico Troiano Cicli", "b": "F.Troiano", "p": 22.5, "s": "pantaloncino-tecnico-troiano-cicli-uomo", "i": "sch/n-pantaloncino-tecnico-troiano-cicli-uomo.png", "neg": true, "f": "troiano"}]};
 const eur = n => n.toLocaleString('it-IT',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
 const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const LINK = s => 'https://troianocicli.it/pages/prodotto.html?slug=' + s;
@@ -313,12 +297,18 @@ const LINK = s => 'https://troianocicli.it/pages/prodotto.html?slug=' + s;
 
 /* ---------- regali ---------- */
 (() => {
-  let gruppo = 'padel', max = 9999, nCarr = 0, timer, lato = 0;
+  const SOTTO = {lei:[['padel','Padel'],['bici','Bici'],['abb','Abbigliamento']], lui:[['padel','Padel'],['bici','Bici'],['abb','Abbigliamento']], bambini:[['bimba','Bici bimba'],['bimbo','Bici bimbo'],['caschi','Caschi e campanelli'],['padel','Padel']], piccoli:[['padel','Padel'],['bici','Bici'],['troiano','Troiano']]};
+  let gruppo = 'lei', sotto = 'padel', nCarr = 0, timer, lato = 0;
+  const fz = document.querySelector('.filtri');
+  function filtri(){
+    fz.innerHTML = SOTTO[gruppo].map(([k,n]) => `<button aria-pressed="${k===sotto}" data-k="${k}">${n}</button>`).join('');
+  }
+  fz.addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; sotto = b.dataset.k; filtri(); disegna(); });
   const g = document.getElementById('griglia');
   const cuore = '<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>';
   const borsa = '<svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg>';
   function disegna(){
-    const lista = PRODOTTI[gruppo].filter(p => p.p <= max).sort((a,b) => (!!b.tip - !!a.tip) || (b.neg - a.neg));
+    const lista = PRODOTTI[gruppo].filter(p => p.f === sotto).sort((a,b) => b.neg - a.neg);
     lato = 0;
     g.innerHTML = lista.length ? lista.map((p,i) => {
       return `<div class="cella">
@@ -329,22 +319,19 @@ const LINK = s => 'https://troianocicli.it/pages/prodotto.html?slug=' + s;
             <img src="${p.i}" alt="${p.n}" loading="lazy">
           </div>
           <div class="product-card-body">
-            <div class="product-card-brand">${p.b}</div>
+            <div class="product-card-brand">${p.b || ''}</div>
             <div class="product-card-name"><a href="${LINK(p.s)}">${p.n}</a></div>
             <div class="product-card-footer"><div class="product-price">${eur(p.p)}</div><button class="product-card-add" data-n="${p.n}" aria-label="Aggiungi al carrello">${borsa}</button></div>
           </div>
         </div></div>`;
-    }).join('') : `<p class="vuoto">In questa fascia di prezzo non abbiamo regali per questo gruppo. Prova un altro budget, o passa in negozio: qualcosa troviamo.</p>`;
+    }).join('') : `<p class="vuoto">Passa in negozio: qualcosa troviamo.</p>`;
   }
   document.querySelectorAll('.persone button').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('.persone button').forEach(x => x.setAttribute('aria-selected', x === b));
-    gruppo = b.dataset.g; disegna();
+    gruppo = b.dataset.g; sotto = SOTTO[gruppo][0][0]; filtri(); disegna();
     document.querySelector('.filtri').scrollIntoView({behavior:'smooth', block:'start'});
   }));
-  document.querySelectorAll('.filtri button').forEach(b => b.addEventListener('click', () => {
-    document.querySelectorAll('.filtri button').forEach(x => x.setAttribute('aria-pressed', x === b));
-    max = +b.dataset.max; disegna();
-  }));
+
   g.addEventListener('click', e => {
     const add = e.target.closest('.product-card-add'), wish = e.target.closest('.wishlist-btn'), a = e.target.closest('a');
     if (add){ add.classList.add('fatto'); const n = document.getElementById('nCarrello'); n.textContent = ++nCarr; n.classList.add('salta'); setTimeout(() => n.classList.remove('salta'), 400); avviso(add.dataset.n + ' è nel carrello.'); return; }
@@ -352,41 +339,7 @@ const LINK = s => 'https://troianocicli.it/pages/prodotto.html?slug=' + s;
     if (a) return;
     const card = e.target.closest('.product-card'); if (card) location.href = card.dataset.link;
   });
-  disegna();
-})();
-
-/* ---------- entrata: palle di neve, tutto entro 5 secondi ---------- */
-(() => {
-  let visto = false; try { visto = sessionStorage.getItem('introNeve') === '1'; } catch(e){}
-  if (ridotto || visto || location.hash === '#noIntro') return;
-  try { sessionStorage.setItem('introNeve','1'); } catch(e){}
-  const I = document.getElementById('intro'), S = document.getElementById('strato'), C = document.getElementById('coltre'), T = document.getElementById('scritta');
-  I.hidden = false; document.documentElement.style.overflow = 'hidden';
-  const timers = [], dopo = (ms, f) => timers.push(setTimeout(f, ms));
-  function botto(x, y, r){
-    const n = 11, pts = [];
-    for (let i = 0; i < n; i++){ const a = i/n*6.283, k = r*(.7 + Math.random()*.5); pts.push([x + Math.cos(a)*k, y + Math.sin(a)*k]); }
-    const mid = (p,q) => [(p[0]+q[0])/2, (p[1]+q[1])/2], s0 = mid(pts[n-1], pts[0]);
-    const d = `M${s0[0]},${s0[1]} ` + pts.map((p,i) => { const m = mid(p, pts[(i+1)%n]); return `Q${p[0]},${p[1]} ${m[0]},${m[1]}`; }).join(' ') + 'Z';
-    const s = document.createElementNS('http://www.w3.org/2000/svg','svg');
-    s.setAttribute('class','botto'); s.setAttribute('width',innerWidth); s.setAttribute('height',innerHeight);
-    let gocce = ''; for (let i = 0; i < 7; i++){ const a = Math.random()*6.283, k = r*(1.15 + Math.random()*.5); gocce += `<circle cx="${x+Math.cos(a)*k}" cy="${y+Math.sin(a)*k}" r="${4+Math.random()*r*.08}" fill="#fcfcfb"/>`; }
-    s.innerHTML = `<path d="${d}" fill="#fcfcfb"/><path d="${d}" fill="none" stroke="#e6e8ee" stroke-width="3"/>${gocce}`;
-    S.insertBefore(s, C);
-    s.animate([{transform:'scale(.2)',transformOrigin:`${x}px ${y}px`},{transform:'scale(1)',transformOrigin:`${x}px ${y}px`}],{duration:220,easing:'cubic-bezier(.2,1.6,.4,1)'});
-  }
-  function tira(tx, ty, r){
-    const sx = innerWidth*.88, sy = innerHeight*1.05, p = document.createElement('div'); p.className = 'palla'; I.appendChild(p);
-    const mx = (sx+tx)/2, my = Math.min(sy,ty) - innerHeight*.25;
-    p.animate([{transform:`translate(${sx}px,${sy}px) scale(.5)`},{transform:`translate(${mx}px,${my}px) scale(1.1)`,offset:.5},{transform:`translate(${tx}px,${ty}px) scale(${r/22})`}],{duration:380,easing:'cubic-bezier(.3,0,.7,1)'}).onfinish = () => { p.remove(); botto(tx, ty, r); };
-  }
-  [[.22,.3],[.7,.22],[.45,.6],[.15,.72],[.82,.62],[.5,.25],[.32,.45]].forEach((c,i) => dopo(350 + i*230, () => tira(innerWidth*c[0], innerHeight*c[1], Math.min(innerWidth,innerHeight)*(.16 + Math.random()*.08))));
-  dopo(2250, () => C.classList.add('piena'));
-  dopo(2650, () => T.classList.add('on'));
-  dopo(4100, chiudi);
-  function chiudi(){ timers.forEach(clearTimeout); I.classList.add('esce'); setTimeout(() => { I.remove(); document.documentElement.style.overflow = ''; }, 750); }
-  I.addEventListener('click', chiudi);
-  addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.contains(I)) chiudi(); }, {once:true});
+  filtri(); disegna();
 })();
 
 function avviso(t){ const a = document.getElementById('avviso'); a.textContent = t; a.classList.add('on'); clearTimeout(avviso.t); avviso.t = setTimeout(() => a.classList.remove('on'), 3200); }

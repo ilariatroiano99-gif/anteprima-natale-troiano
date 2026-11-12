@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Pacco con la mano · prova</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+<style>
+:root{--notte:#1a1a2e;--lime:#a3e635;--rosso:#a31d23;--rosso-scuro:#7f1519;--ease:cubic-bezier(.16,1,.3,1);--molla:cubic-bezier(.34,1.56,.64,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:#2b2b2b;overflow:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--lime);color:var(--notte)}
+/* il sito com'e' oggi (foto della home) */
+.sito{position:fixed;inset:0;background:#3a3a3a url(sito-pc.png) top center/cover no-repeat}
+@media (max-width:700px){.sito{background-image:url(sito-tel.png)}}
+
+/* il pacco */
+.regalo{position:fixed;z-index:10;left:max(24px,env(safe-area-inset-left));bottom:max(24px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:0;
+  height:88px;padding:0;border:0;border-radius:999px;background:#fff;color:var(--notte);cursor:pointer;
+  box-shadow:0 12px 32px rgba(10,10,20,.28),0 2px 6px rgba(10,10,20,.12);transition:box-shadow .4s var(--ease),transform .4s var(--ease)}
+.regalo:hover{box-shadow:0 16px 40px rgba(10,10,20,.34),0 2px 6px rgba(10,10,20,.12);transform:translateY(-2px)}
+.regalo:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+.icona{width:88px;height:88px;flex:none;border-radius:50%;overflow:hidden;background:#fff}
+.icona img{display:block;width:100%;height:100%;object-fit:cover;transform-origin:70% 0;transition:transform .5s var(--molla)}
+.scritta{display:grid;grid-template-columns:0fr;transition:grid-template-columns .6s var(--ease)}
+.scritta>span{overflow:hidden;white-space:nowrap;font-size:14px;font-weight:600;line-height:1.2;text-align:left}
+.scritta small{display:block;font-size:11px;font-weight:500;color:#5b5f6b;margin-top:2px}
+.regalo.aperta .scritta,.regalo:hover .scritta,.regalo:focus-visible .scritta{grid-template-columns:1fr}
+.regalo.aperta .scritta>span,.regalo:hover .scritta>span,.regalo:focus-visible .scritta>span{padding-right:24px}
+
+/* il saltello: tutto il bottone salta, il pacco dondola appeso alla mano */
+.saltello{animation:salta .9s var(--ease)}
+.saltello .icona img{animation:dondola 1.4s var(--ease)}
+@keyframes salta{0%{transform:none}18%{transform:translateY(0) scale(1.04,.96)}38%{transform:translateY(-14px) scale(.98,1.03)}58%{transform:translateY(0) scale(1.03,.97)}74%{transform:translateY(-4px)}100%{transform:none}}
+@keyframes dondola{0%{transform:none}30%{transform:rotate(5deg)}55%{transform:rotate(-3deg)}78%{transform:rotate(1.5deg)}100%{transform:none}}
+.regalo:hover .icona img{transform:rotate(-4deg) scale(1.06)}
+.apre .icona img{transition:transform .6s var(--molla);transform:scale(1.18) translateY(-6px)!important}
+
+/* coriandoli */
+.coriandoli{position:fixed;z-index:11;pointer-events:none;left:0;top:0;width:0;height:0}
+.coriandoli i{position:absolute;left:0;top:0;width:8px;height:8px;border-radius:2px;opacity:0}
+
+/* passaggio alla pagina dei regali */
+.velo{position:fixed;inset:0;z-index:20;background:#efebf1;overflow:hidden;clip-path:circle(0 at var(--x,60px) var(--y,90%));transition:clip-path .9s cubic-bezier(.7,0,.2,1);display:flex;align-items:center;color:var(--notte);pointer-events:none}
+.velo.su{clip-path:circle(150% at var(--x,60px) var(--y,90%))}
+.velo h2{position:relative;z-index:2;margin-left:clamp(24px,15vw,280px);font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:clamp(56px,9.6vw,150px);line-height:.95;letter-spacing:-.03em;text-align:left;opacity:0;transform:translateY(16px);transition:opacity .5s .5s,transform .7s var(--ease) .5s}
+.velo h2 em{display:block;font-style:italic;font-weight:300;color:var(--rosso)}
+.velo.su h2{opacity:1;transform:none}
+/* la mano col pacco scende dall'alto e dondola */
+.velo .mano{position:absolute;right:0;top:0;height:112%;width:auto;max-width:none;transform-origin:88% 0;transform:translateY(-105%);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%),linear-gradient(0deg,transparent 0,#000 18%);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(90deg,transparent 0,#000 30%),linear-gradient(0deg,transparent 0,#000 18%);mask-composite:intersect}
+.velo.su .mano{animation:scende 1.6s cubic-bezier(.34,1.3,.5,1) .35s forwards}
+@keyframes scende{0%{transform:translateY(-105%) rotate(0)}55%{transform:translateY(0) rotate(3deg)}72%{transform:translateY(0) rotate(-2deg)}86%{transform:translateY(0) rotate(1deg)}100%{transform:translateY(0) rotate(0)}}
+@media (max-width:700px){
+  .velo{align-items:flex-end}
+  .velo .mano{width:100%;height:68%;object-fit:cover;object-position:70% top}
+  .velo h2{font-size:clamp(48px,14vw,72px)}
+  .velo h2{margin:0 0 56px 24px}
+}
+
+@media (max-width:700px){
+  .regalo{left:16px;bottom:max(16px,env(safe-area-inset-bottom))}
+  .regalo{height:72px}.icona{width:72px;height:72px}
+}
+@media (prefers-reduced-motion:reduce){
+  .regalo,.icona img,.velo,.velo h2,.velo .mano,.scritta{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="sito" role="img" aria-label="La home di troianocicli.it com'è oggi"></div>
+
+<button class="regalo" id="regalo" type="button" data-href="index.html" aria-label="Regali di Natale: apri la pagina dei regali">
+  <span class="icona" aria-hidden="true"><img src="img/pacco-mano.jpg" alt="" width="88" height="88"></span>
+  <span class="scritta"><span>Regali di Natale<small>Ordina entro il 15 dicembre</small></span></span>
+</button>
+
+<div class="coriandoli" id="coriandoli" aria-hidden="true"></div>
+<div class="velo" id="velo" aria-hidden="true"><img class="mano" src="foto/apertura_pacco.jpg" alt=""><h2>Regali<em>di Natale.</em></h2></div>
+
+<script>
+(function(){
+  var b=document.getElementById('regalo'),v=document.getElementById('velo'),co=document.getElementById('coriandoli');
+  var calmo=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // appena arrivi: la scritta esce per 3 secondi, poi resta solo il pacco
+  if(!calmo){setTimeout(function(){b.classList.add('aperta')},900);setTimeout(function(){b.classList.remove('aperta')},4200);}
+  // ogni tanto il coperchio fa un saltello per farsi notare
+  function saluta(){if(calmo||b.classList.contains('apre'))return;b.classList.remove('saltello');void b.offsetWidth;b.classList.add('saltello')}
+  setTimeout(saluta,1400);setInterval(saluta,6000);
+
+  b.addEventListener('click',function(){
+    var dove=b.getAttribute('data-href');
+    if(calmo){location.href=dove;return}
+    if(b.classList.contains('apre'))return;
+    b.classList.add('apre');
+    var r=b.querySelector('.icona').getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height*.36;
+    co.style.left=cx+'px';co.style.top=cy+'px';
+    var colori=['#a3e635','#a3e635','#ffffff','#a31d23','#1a1a2e'];
+    for(var i=0;i<18;i++){
+      var e=document.createElement('i'),a=(-90+(Math.random()*120-60))*Math.PI/180,d=60+Math.random()*90,
+          rot=Math.random()*540-270,s=.6+Math.random()*.7;
+      e.style.background=colori[i%colori.length];
+      if(i%3===0)e.style.borderRadius='50%';
+      co.appendChild(e);
+      e.animate([
+        {opacity:1,transform:'translate(-50%,-50%) scale('+s+') rotate(0deg)'},
+        {opacity:1,offset:.6,transform:'translate('+(Math.cos(a)*d)+'px,'+(Math.sin(a)*d)+'px) scale('+s+') rotate('+rot+'deg)'},
+        {opacity:0,transform:'translate('+(Math.cos(a)*d*1.1)+'px,'+(Math.sin(a)*d+40)+'px) scale('+(s*.6)+') rotate('+(rot*1.4)+'deg)'}
+      ],{duration:900+Math.random()*300,easing:'cubic-bezier(.16,1,.3,1)',fill:'forwards'});
+    }
+    v.style.setProperty('--x',cx+'px');v.style.setProperty('--y',cy+'px');
+    setTimeout(function(){v.classList.add('su')},420);
+    setTimeout(function(){location.href=dove},2600);
+  });
+})();
+</script>
+</body>
+</html>
