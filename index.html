@@ -171,7 +171,8 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .apertura::after{background:linear-gradient(0deg,var(--nero) 0%,var(--nero) calc(100% - min(132vw,660px) + 4px),rgba(15,15,15,0) calc(100% - min(132vw,660px) + 200px))}
   #neve{height:min(132vw,660px)}
   .apertura .cont{padding-bottom:48px;margin-top:-140px}
-  .nella-foto{right:16px;top:calc(32px + min(132vw,660px) - 340px);bottom:auto;padding:6px 12px 6px 6px}
+  .nella-foto{position:relative;z-index:4;right:auto;top:auto;bottom:auto;align-self:flex-start;margin:0 16px 40px;padding:6px 12px 6px 6px;box-shadow:none;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.16)}
+  .nella-foto span{color:#fff}.nella-foto small{color:rgba(255,255,255,.6)}
   .nella-foto img{width:44px;height:44px}
   .numeri strong{font-size:40px}
   .numeri div{padding:16px 4px}
