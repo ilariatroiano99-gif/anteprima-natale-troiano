@@ -157,7 +157,7 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 
 /* entrata: palle di neve, 5 secondi */
 
-.buono{padding:96px 0 0}
+.buono{padding:96px 0 0;scroll-margin-top:32px}
 .buoni{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
 .buoni article{background:#fff;border:1px solid var(--bordo);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
 .buoni .ft{background:#f4f4f2;display:grid;place-items:center;padding:24px}
@@ -223,11 +223,23 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     <p>Qualcuno ha già messo le mani sui regali. Meglio scegliere prima che spariscano.</p>
     <div class="bottoni">
       <a class="btn btn-bianco" href="#scegli">Trova il regalo <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8l5 5 5-5"/></svg></a>
-      <a class="btn btn-vuoto" href="#negozio">Passa in negozio</a>
+      <a class="btn btn-vuoto" href="#buono">Buono regalo</a>
     </div>
   </div>
   <a class="nella-foto" href="https://troianocicli.it/pages/prodotto.html?slug=scarpe-bullpadel-elite-26v"><img src="img/BPS08c1.jpg" alt=""><div><small>Nella foto</small><span>Scarpe Bullpadel Elite 26V</span><b>112,00 €</b></div></a>
 </section>
+
+<section class="buono" id="buono" aria-labelledby="titoloBuono"><div class="cont">
+  <div class="testa">
+    <div><div class="etichetta">Non sai cosa scegliere?</div><h2 class="titolo" id="titoloBuono">Buono<em>regalo.</em></h2></div>
+  </div>
+  <p class="sotto">Scegli l'importo, il regalo lo sceglie chi lo riceve.</p>
+  <div class="buoni">
+    <article><div class="ft"><img src="buono/buono-25.png" alt="Buono regalo Troiano Cicli da 25 euro"></div><div class="info"><div><span>Buono regalo</span><b>25,00 €</b></div><button class="product-card-add" aria-label="Aggiungi il buono da 25 euro" data-n="Buono regalo 25 €"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></article>
+    <article><div class="ft"><img src="buono/buono-50.png" alt="Buono regalo Troiano Cicli da 50 euro"></div><div class="info"><div><span>Buono regalo</span><b>50,00 €</b></div><button class="product-card-add" aria-label="Aggiungi il buono da 50 euro" data-n="Buono regalo 50 €"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></article>
+    <article><div class="ft"><img src="buono/buono-100.png" alt="Buono regalo Troiano Cicli da 100 euro"></div><div class="info"><div><span>Buono regalo</span><b>100,00 €</b></div><button class="product-card-add" aria-label="Aggiungi il buono da 100 euro" data-n="Buono regalo 100 €"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></article>
+  </div>
+</div></section>
 
 <section class="conto" aria-labelledby="titoloConto"><div class="cont">
   <div>
@@ -255,18 +267,6 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   </div>
   <div class="filtri" role="group" aria-label="Per chi"></div>
   <div class="griglia" id="griglia" role="tabpanel"></div>
-</div></section>
-
-<section class="buono" id="buono" aria-labelledby="titoloBuono"><div class="cont">
-  <div class="testa">
-    <div><div class="etichetta">Non sai cosa scegliere?</div><h2 class="titolo" id="titoloBuono">Buono<em>regalo.</em></h2></div>
-  </div>
-  <p class="sotto">Scegli l'importo, il regalo lo sceglie chi lo riceve.</p>
-  <div class="buoni">
-    <article><div class="ft"><img src="buono/buono-25.png" alt="Buono regalo Troiano Cicli da 25 euro"></div><div class="info"><div><span>Buono regalo</span><b>25,00 €</b></div><button class="product-card-add" aria-label="Aggiungi il buono da 25 euro" data-n="Buono regalo 25 €"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></article>
-    <article><div class="ft"><img src="buono/buono-50.png" alt="Buono regalo Troiano Cicli da 50 euro"></div><div class="info"><div><span>Buono regalo</span><b>50,00 €</b></div><button class="product-card-add" aria-label="Aggiungi il buono da 50 euro" data-n="Buono regalo 50 €"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></article>
-    <article><div class="ft"><img src="buono/buono-100.png" alt="Buono regalo Troiano Cicli da 100 euro"></div><div class="info"><div><span>Buono regalo</span><b>100,00 €</b></div><button class="product-card-add" aria-label="Aggiungi il buono da 100 euro" data-n="Buono regalo 100 €"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></article>
-  </div>
 </div></section>
 
 <section class="negozio" id="negozio" aria-labelledby="titoloCasa"><div class="cont">
