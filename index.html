@@ -166,15 +166,15 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 .buoni .info b{font-size:16px;color:var(--notte)}
 .buoni .info span{display:block;font-size:13px;color:var(--grigio)}
 .buono .sotto{margin-top:16px;font-size:14px;color:var(--grigio);max-width:56ch}
-.fascia-buono{display:flex;align-items:center;gap:24px;width:100%;margin-top:12px;padding:16px 24px 16px 16px;border-radius:12px;background:var(--notte);color:#fff;text-align:left;transition:transform .3s var(--ease),box-shadow .3s}
+.fascia-buono{display:flex;align-items:center;gap:24px;width:100%;margin-top:12px;padding:16px 24px 16px 16px;border-radius:12px;background:var(--lime);color:var(--notte);text-align:left;transition:transform .3s var(--ease),box-shadow .3s}
 .fascia-buono img{width:136px;height:auto;flex:none;transform:rotate(-2deg);transition:transform .5s var(--ease)}
 .fascia-buono:hover img{transform:rotate(-6deg) translateY(-2px)}
 .fascia-buono .testo{flex:1}
 .fascia-buono strong{display:block;font-family:var(--titoli);font-weight:700;font-size:clamp(20px,2vw,28px);line-height:1.1}
-.fascia-buono small{display:block;margin-top:6px;font-size:14px;color:rgba(255,255,255,.72)}
-.fascia-buono .freccia{width:24px;height:24px;flex:none;fill:none;stroke:var(--lime);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
+.fascia-buono small{display:block;margin-top:6px;font-size:14px;color:#2b3a12}
+.fascia-buono .freccia{width:24px;height:24px;flex:none;fill:none;stroke:var(--notte);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
 .fascia-buono:hover .freccia{transform:translateX(4px)}
-.fascia-buono[aria-selected=true]{box-shadow:inset 0 0 0 2px var(--lime)}
+.fascia-buono[aria-selected=true]{box-shadow:inset 0 0 0 2px var(--notte)}
 .barra{display:flex;align-items:center;gap:16px;margin-top:48px;scroll-margin-top:0}
 .barra .filtri{margin:0}
 .torna{display:none;align-items:center;gap:4px;padding:8px 12px 8px 4px;font-size:13px;font-weight:600;color:var(--notte);white-space:nowrap}
@@ -277,7 +277,7 @@ footer .cont{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   </div>
   <button class="fascia-buono" data-g="buono" aria-selected="false">
     <img src="buono/buono-50.png" alt="">
-    <span class="testo"><strong>Regala un buono</strong><small>25, 50 o 100 €. Il regalo lo sceglie chi lo riceve.</small></span>
+    <span class="testo"><strong>Regala un buono</strong><small>Da 25, 50 o 100 €.</small></span>
     <svg class="freccia" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
   </button>
   <div class="barra" id="barra">
